@@ -3,17 +3,54 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ManoBoo的技术小窝</title>
+  <title>iOS，如何模仿一个App | ManoBoo的技术小窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ManoBoo的技术博客，以后文章会和简书同步更新~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ManoBoo的技术小窝">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="##前言作为一个IOS程序员，闲的时候也想自己做一个app练练手，又苦于没有UI设计，也没有好的idea，所以只能先模仿别人的App了，但是也会遇到以下问题①不知道怎么入手？怎么设计
+②app中的素材、图标要自己找吗、没有UI妹子给你切图怎么办，
+③没有数据怎么办？假数据也不会做怎么办
+④编写程序中该注意些什么
+
+### 以下就从上面的三点开始介绍Tips:一下均为我个人的见解，有疑问或者建议请告">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS，如何模仿一个App">
+<meta property="og:url" content="http://yoursite.com/2016/03/04/iOS，如何模仿一个App/index.html">
 <meta property="og:site_name" content="ManoBoo的技术小窝">
-<meta property="og:description" content="ManoBoo的技术博客，以后文章会和简书同步更新~">
+<meta property="og:description" content="##前言作为一个IOS程序员，闲的时候也想自己做一个app练练手，又苦于没有UI设计，也没有好的idea，所以只能先模仿别人的App了，但是也会遇到以下问题①不知道怎么入手？怎么设计
+②app中的素材、图标要自己找吗、没有UI妹子给你切图怎么办，
+③没有数据怎么办？假数据也不会做怎么办
+④编写程序中该注意些什么
+
+### 以下就从上面的三点开始介绍Tips:一下均为我个人的见解，有疑问或者建议请告">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-d02348459fbb12d0.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-69ab39b354c62f1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-1ec9970356f439fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-19dd06f7a0b5f760.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-7593ba963100b291.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-88813da3b9ed3f1a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-e6278fa083cfbac7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-ff66476405710e99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-a5ea0ed9c0ba754c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-e5025717b7666b80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-45f1dd3ca0742236.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-1092bf90c5678583.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-24e906d1350288ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-7f6120f56d33748f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-c85e52b34db68ea9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-6f0e6bcb53bfa569.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-bfbd47b136aaa47b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-7af7cce080989029.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-7af7cce080989029.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-6ddaca9337de3424.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-06-29T11:33:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ManoBoo的技术小窝">
-<meta name="twitter:description" content="ManoBoo的技术博客，以后文章会和简书同步更新~">
+<meta name="twitter:title" content="iOS，如何模仿一个App">
+<meta name="twitter:description" content="##前言作为一个IOS程序员，闲的时候也想自己做一个app练练手，又苦于没有UI设计，也没有好的idea，所以只能先模仿别人的App了，但是也会遇到以下问题①不知道怎么入手？怎么设计
+②app中的素材、图标要自己找吗、没有UI妹子给你切图怎么办，
+③没有数据怎么办？假数据也不会做怎么办
+④编写程序中该注意些什么
+
+### 以下就从上面的三点开始介绍Tips:一下均为我个人的见解，有疑问或者建议请告">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1299512-d02348459fbb12d0.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternate" href="/atom.xml" title="ManoBoo的技术小窝" type="application/atom+xml">
   
@@ -66,54 +103,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/29/hello-world/" class="article-date">
-  <time datetime="2016-06-29T11:14:19.000Z" itemprop="datePublished">2016-06-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/29/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/29/hello-world/" data-id="ciq0t0qis0001rt9rjvl4bc0q" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-iOS，如何模仿一个App" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-iOS，如何模仿一个App" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/03/04/iOS，如何模仿一个App/" class="article-date">
   <time datetime="2016-03-04T02:42:00.000Z" itemprop="datePublished">2016-03-04</time>
@@ -126,8 +116,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/04/iOS，如何模仿一个App/">iOS，如何模仿一个App</a>
+    <h1 class="article-title" itemprop="name">
+      iOS，如何模仿一个App
     </h1>
   
 
@@ -211,10 +201,23 @@
     </footer>
   </div>
   
-</article>
-
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/29/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
   
+</article>
 
 </section>
         
