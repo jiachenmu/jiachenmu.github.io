@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+          <head>
+        <meta charset="utf-8">
+            
+            <title>
+                Swift2.0 高仿半塘App | ManoBoo的技术小窝
+            </title>
+            <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+            <meta name="theme-color" content="#4184f3">
+            
+            
+            <link href="/favicon.ico" rel="icon"/>
+            
+
+            <link rel="stylesheet" href="/css/highlight.light.css">
+            <link rel="stylesheet" href="/css/nav-icon.css">
+            <link rel="stylesheet" href="/css/waves.min.css">
+            <link rel="stylesheet" href="/css/jquery.tocify.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/nav-indicator.css">
+            
+  
+
+  
+            </meta>
+        </meta>
+    </head>
+    <body>
+        <header>
+            <!-- cover image or sth. -->
+        </header>
+        <div id="main" class="m-scene">
+            <div class="nav-wrapper" style="background-color:undefined">
+    <div class="container">
+        <nav>
+            <div class="logo wave">
+                <a href="/" id="logo">
+                    ManoBoo的技术小窝
+                </a>
+            </div>
+            <div class="nav-toggle-icon" >
+                <div class="material-hamburger">
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                </div>
+            </div>
+            <div class="menu-wrapper">
+                <div class="nav-indicator">
+                </div>
+                <ul class="menus">
+                    
+                     
+                        <li>
+                            <a class="wave " href="/">
+                                Home
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/archives">
+                                Archive
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/about">
+                                About
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave no-smoothstate" href="/atom.xml">
+                                RSS
+                            </a>
+                        </li>
+                     
+                    
+                   
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+            <div class="container content">
+                <div class="scene_element scene_element--fadein">
+                    <div class="row">
+    <div class="main">
+        <article>
+          
+          <header class="post-header">
+          
+          </header>
+          <h1 class="post-title">Swift2.0 高仿半塘App</h1>
+
+          <section class="post-info">
+            <span class="post-date">2016/6/30</span>
+            
+            
+            <span class="post-tags">
+              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Swift2-0-高仿App-半塘/">Swift2.0 高仿App 半塘</a></li></ul>
+            </span>
+            
+          </section>
+
+          <section class="post-content">
+            <p>#IOS-Swift2.0 高仿半糖App</p>
+<hr>
+<p>##写在前面的话<br>–少年我是去年毕业做IOS开发的，这个项目大概是2016年1月份到现在做完的，项目刚开始没学过Swift语言，但想着不会就该去挑战，于是边学习边做这个项目，现在对Swift也有了一定的了解<br>，在此感谢<a href="http://www.jianshu.com/users/5fe7513c7a57/latest_articles" target="_blank" rel="external">维尼的小熊</a>的指导</p>
+<p>##关于项目(GitHub地址在文章最下方)<br>–这个开源项目为半糖，<a href="http://www.ibantang.com" target="_blank" rel="external">官网➡</a>,类似于美丽说，一款电商App，使用语言:Swift2.0,开发工具: Xcode 7.1,纯代码开发,耗时两个多月，数据为本地数据，用Charles进行抓包。<br>–项目测试机为5S，UI没有对6/6S进行适配<br>–因为开发时间有限，APP里面的各种分类相当繁多，因此首页中测试的话点第一个分类，第一个cell，一般都是有数据的，没有也会提示。<br>–我是个新手,Bug是难免的嘛。如果发现有Bug和疑问，请向我联系，QQ、简书、微博都可以<br>–Tips:首页支持3D Touch，可以试试哦~</p>
+<p>##项目效果图</p>
+<p>####首页展示<br><img src="http://upload-images.jianshu.io/upload_images/1299512-f59c8f1a63af8958.gif?imageMogr2/auto-orient/strip" alt="首页轮播图加展示.gif"></p>
+<p>#####首页-清单展示</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1299512-bafce461cd2e285b.gif?imageMogr2/auto-orient/strip" alt="首页-清单展示.gif"></p>
+<p>#####首页-搜索分类展示</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1299512-0d90d236d859233e.gif?imageMogr2/auto-orient/strip" alt="首页-搜索展示.gif"></p>
+<p>####3D Touch展示(用6S及6S以上测试)</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1299512-3c0e3ba29e9f00d8.gif?imageMogr2/auto-orient/strip" alt="3DTouch展示.gif"></p>
+<p>####广场展示<br><img src="http://upload-images.jianshu.io/upload_images/1299512-033b26149abfad1d.gif?imageMogr2/auto-orient/strip" alt="首页-广场展示.gif"></p>
+<p>####秀</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1299512-626bdc9943daf60d.gif?imageMogr2/auto-orient/strip" alt="秀我展示.gif"></p>
+<p>####消息(这一部分😂，我没好友，没粉丝，抓包木有数据，所以就按照自己的想法做咯)</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1299512-6dca6a94de88f6ff.gif?imageMogr2/auto-orient/strip" alt="消息.gif"></p>
+<p>####个人中心(换头像请用真机测试~)</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1299512-1295962d038abd25.gif?imageMogr2/auto-orient/strip" alt="个人中心.gif"></p>
+<p>##项目详细讲解 (按APP的启动顺序来)</p>
+<p>####启动页面</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1299512-5510cff43f75da01.gif?imageMogr2/auto-orient/strip" alt="启动页面.gif"><br>主要代码如下:<br>1.在appDelegate中<br><code>self.window?.rootViewController = mainViewController()</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//MARK: App首次启动显示 app的简介</div><div class="line">    func mainViewController() -&gt; UIViewController&#123;</div><div class="line">        //firstStart不为空,不是是第一次启动</div><div class="line">        if  NSUserDefaults.standardUserDefaults().objectForKey(&quot;FirstStart&quot;) != nil &#123;</div><div class="line">            return self.tabbarController</div><div class="line">        &#125;else &#123;</div><div class="line">            //是第一次启动</div><div class="line">            NSUserDefaults.standardUserDefaults().setObject(false, forKey: &quot;FirstStart&quot;)</div><div class="line">            let firstVC = FirstStartViewController()</div><div class="line"></div><div class="line">            return firstVC</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>Tips: 用户第一次启动App的时候<code>self.window.rootViewController = FirstStartViewController()</code>  使用户进入引导页，动画完成后，点击『开启App之旅』,引导页发出 通知，appDelegate接受通知，再将<code>self.window?.rootViewController = self.tabBarController</code></p>
+<p>####首页-展示</p>
+<p>#####①最好的设计思路应该是这样的：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1299512-84bab42ca5fbfa65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp4c68a801.png"><br>Tips：以下的思路 在个人中心很完整，前去看看哈</p>
+<p>######1.红色部分设计为 collectionHeaderView<br>方法： 初始化collecitonView时  在其layout参数中设置<br><code>layout.headerReferenceSize = CGSizeMake(width, height)</code><br>然后collectionView 注册这个headerView<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public func registerClass(viewClass: AnyClass?, forSupplementaryViewOfKind elementKind: String, withReuseIdentifier identifier: String)`</div><div class="line">然后 在collectionView代理方法</div><div class="line">`func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -&gt; UICollectionReusableView &#123;</div><div class="line">        var reuseView = UICollectionReusableView()</div><div class="line">        if kind == UICollectionElementKindSectionHeader &#123;</div><div class="line">            let headView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: &quot;collectionViewHeaderView&quot;, forIndexPath: indexPath)</div><div class="line">            </div><div class="line">            headView.addSubview(collectionHeadView)</div><div class="line">            reuseView = headView</div><div class="line">        &#125;</div><div class="line">        return reuseView</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>######2.绿色部分为collectionView 只作为容器使用</p>
+<p>######3.蓝色部分为显示的tableview，添加到collectionView的cell.contentView进行显示<br>Tips:现在很多App的启动页面也是这个思路，整体为一个UICollectionView，每一个cell都添加UITableView进行显示</p>
+<p>#####②关于cell 动态高度的问题,上图：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1299512-4f95d6d29d3a0ec3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp3734bf84.png"><br>蓝色的这一部分是清单详情中的描述内容，JSON中的描述文字都不一样，所以导致整个cell的高度都是动态不定的<br>Tips：<br>1.在cell所有的model中添加<code>cellHeight</code>字段,在tableView代理方法<code>heightForRowAtIndexPath</code>中,判断model中的<code>cellHeight</code>字段是不是为空，有值则返回该值,类似<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -&gt; CGFloat &#123;</div><div class="line">       //model为对应cell的model</div><div class="line">      if model.cellHeight != nil &#123;</div><div class="line">             return model.cellHeight</div><div class="line">       &#125;</div><div class="line">    return 30</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2.cell中的属性model 重写set方法，类似<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var model: YourModel&#123;</div><div class="line">  didSet&#123;</div><div class="line">        //--------</div><div class="line">            做你的操作</div><div class="line">        //-------</div><div class="line">        if model.cellHeight == nil &#123;</div><div class="line">        model.cellHeight = 你计算后的高度</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>#####③ 3D Touch<br>Tips:其实App中应用最多的也就是不用点进去看。可以预览下一级显示的内容，比如 微信</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1299512-a13038df731a2086.gif?imageMogr2/auto-orient/strip" alt="3D Touch通用.gif"><br>上代码：<br><code>viewDidLoad()</code>中 <code>self.add3DTouch()</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//MARK: 添加 3D touch功能</div><div class="line">    func add3DTouch() &#123;</div><div class="line">        //1.检测 3D touch 是否可用</div><div class="line">        if traitCollection.forceTouchCapability == .Available &#123;</div><div class="line">            //3DTouch可用，</div><div class="line">            registerForPreviewingWithDelegate(self, sourceView: view)</div><div class="line">        &#125;else &#123;</div><div class="line">            //不可用</div><div class="line">            TipView.showMessage(&quot;不支持3Dtouch,换个6S吧,不谢😂&quot;)    </div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>Tips：<br>1 <code>registerForPreviewingWithDelegate(delegate: UIViewControllerPreviewingDelegate, sourceView: UIView)</code>方法中delegate即为当前控制器self，<code>sourceView</code>即为感应3DTouch功能的View，当前控制器中，我选择的是<code>self.view</code><br>2.控制器上添加代理<code>UIViewControllerPreviewingDelegate</code>,实现方<code>func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -&gt; UIViewController?</code>和<code>func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController)</code>,<br>看代码:</p>
+<p>①这一部分其实就两个步骤</p>
+<ul>
+<li>1.给3D Touch 你要预览的ViewController</li>
+<li>2.设定3D Touch预览控制器的尺寸大小</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -&gt; UIViewController? &#123;</div><div class="line">        </div><div class="line">        </div><div class="line">        //-----这一过程这么繁琐  说白了就是找到当前手指点到的 tableviewCell，后面 3Dtouch 预览的时候会用到 原尺寸 cell.frame</div><div class="line">        let index = Int( showCollectionView.contentOffset.x / SCREEN_WIDTH )</div><div class="line">        let collectionViewCell = showCollectionView.cellForItemAtIndexPath(NSIndexPath(forRow: 0, inSection: index))</div><div class="line">        var tableView = UITableView()</div><div class="line">        for aview in collectionViewCell!.contentView.subviews &#123;</div><div class="line">            if aview.isKindOfClass(UITableView.self) &#123;</div><div class="line">                tableView = aview as! UITableView</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        //*******</div><div class="line">        </div><div class="line">        let indexPath = tableView.indexPathForRowAtPoint(location)</div><div class="line">        let cell = tableView.cellForRowAtIndexPath(indexPath!) as! HomeCell</div><div class="line">        </div><div class="line">        let detailListContrller = ListDetailViewController(listId: &quot;1872&quot;,transImage: cell.imgView.image!)</div><div class="line">        </div><div class="line">    </div><div class="line">        //预显示的尺寸</div><div class="line">        detailListContrller.preferredContentSize = CGSizeMake(SCREEN_WIDTH, 600)</div><div class="line">        //源尺寸</div><div class="line">        previewingContext.sourceRect = cell.frame</div><div class="line">        </div><div class="line">        return detailListContrller</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>②对即将预览的ViewController，做一些操作，比如<strong>隐藏tabbar，隐藏导航栏</strong>等等，然后显示出来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) &#123;</div><div class="line">        showViewController(viewControllerToCommit, sender: self)</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>####广场-展示<br>设计思路如图:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1299512-32d54cd4642191bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp4c3452b2.png"></p>
+<p>######与首页相似，红色部分View是蓝色 mainCollectionView的headerView，红色View中又包含着一个collectionView</p>
+<p>######下拉刷新控件： </p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1299512-99ce105df96fba14.gif?imageMogr2/auto-orient/strip" alt="下拉刷新控件.gif"><br>Tips:下拉刷新控件 使用SVPullToRefresh 框架，然后在它的文件中修改了一个方法，把自己想要出现的动图加了进去<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">- (SVPullToRefreshArrow *)arrow &#123;</div><div class="line">    if(!_arrow) &#123;</div><div class="line">		_arrow = [[SVPullToRefreshArrow alloc]initWithFrame:CGRectMake(0, self.bounds.size.height-54, 22, 48)];</div><div class="line">        _arrow.backgroundColor = [UIColor clearColor];</div><div class="line">              //将框架自带的刷新箭头屏蔽掉</div><div class="line">//		[self addSubview:_arrow];</div><div class="line">        </div><div class="line">        //这一部分是我自定义显示的View</div><div class="line">        UIImageView *gifImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height-54, 125, 125)];</div><div class="line">        self.clipsToBounds = YES;</div><div class="line">        gifImgView.backgroundColor = [UIColor whiteColor];</div><div class="line">        gifImgView.image = [UIImage sd_animatedGIFNamed:@&quot;refreshGif&quot;];</div><div class="line">        //设置刷新动图只在Loading状态下显示</div><div class="line">        [self setCustomView:gifImgView forState:SVPullToRefreshStateLoading];</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    return _arrow;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>####秀出自我<br>这一部分的实现思路比较简单<br>1.在appdelegate中，实现tabbarControllerDelegate方法,<code>shouldSelectViewController</code>中，判断每次点击的是不是ShowMeController,如果是,则返回false，然后在当前的控制器<code>viewController.presentViewController(ShowMeViewController, animated: true, completion: nil)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -&gt; Bool &#123;</div><div class="line">        </div><div class="line">        </div><div class="line">        let childArray = tabbarController.childViewControllers</div><div class="line">        let index = childArray.indexOf(viewController)</div><div class="line">        if index == 2 &#123;</div><div class="line">            print(&quot;Show me!&quot;)</div><div class="line">            presentShowMeViewController(viewController)</div><div class="line">            return false</div><div class="line">        &#125;else if index == 3 &#123;</div><div class="line">            //点击 &apos;消息中心&apos; 延迟5s 后发出通知</div><div class="line">            //模拟网络刷新</div><div class="line">            viewController.tabBarItem.title = nil</div><div class="line">            postNotificationCenter(tabbarController.viewControllers!)</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return true</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>2.对于调用照相机的方法，首先判断有没有摄像头<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) &#123;</div><div class="line">            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera</div><div class="line">            presentViewController(imagePicker, animated: true, completion: nil)</div><div class="line">        &#125;else &#123;</div><div class="line">            TipView.showMessage(&quot;骚年，找个有摄像头的手机吧。。&quot;)</div><div class="line">        &#125;</div></pre></td></tr></table></figure></p>
+<p>然后viewController中添加代理 <code>UIImagePickerControllerDelegate,UINavigationControllerDelegate</code><br>在代理方法中可以获取到刚拍好的图片进行处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) &#123;</div><div class="line">        dispatch_async(dispatch_get_main_queue()) &#123; () -&gt; Void in</div><div class="line">            picker.dismissViewControllerAnimated(true, completion: nil)</div><div class="line">            self.topView.headerImage = image</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>####消息这一部分就很少东西了，因为我没有粉丝，没有消息😂，<br>为了模拟后台发送消息，在tabBarController的”shouldSelectViewController”中，当点击该控制器时，appdelegate发出通知，MessageViewController中接收通知，提示用户收到消息<br><code>//接受 模拟后台的推送、、、、
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: &quot;hasNewMessage&quot;, name: UserHasNewMessage, object: nil)</code></p>
+<p>收到通知以后执行的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">func hasNewMessage()&#123;</div><div class="line">        print(&quot;收到通知了。&quot;)</div><div class="line">        TipView.showMessage(&quot;您有新的消息。但是你看不见😜&quot;)</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>####个人中心<br>这一部分设计思路与广场类似，也都是上面是HeaderView，下面是UICollectionView,不同的是个人中心最上面有一个背景图片，会随着collectionView的contentOffSet变化而放大<br>设计思路：<br><img src="http://upload-images.jianshu.io/upload_images/1299512-c373856c19d81113.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp2ae3bf03.png"></p>
+<p>1.黄色View为 UIImageView，处于整个View的下层，collectionView和它的headerView的<code>backgroundColor = UIColor.clearColor()</code><br>最后在<code>func scrollViewDidScroll(scrollView: UIScrollView)</code>中调整 backImageView的<code>transform</code>属性即可<br>2.关于停靠问题，<br><img src="http://upload-images.jianshu.io/upload_images/1299512-5d605f459c2474c4.gif?imageMogr2/auto-orient/strip" alt="停靠问题.gif"><br>上图<br><img src="http://upload-images.jianshu.io/upload_images/1299512-baff52f142491aee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp19a4b2b9.png"><br>,姑且叫它<code>titleView</code>, titleView滚到设定位置时会停靠到导航栏底下，思路如下：</p>
+<ol>
+<li>titleView是添加到headerView中的，在<code>scrollViewDidScroll</code>方法中，监听collectionView的<code>contentOffset.y</code>的变化，当titleView到达设定的位置时，<code>titleView.removeFromSuperview()</code>,然后计算frame，将其添加到View上，这样就做除了停靠的效果，这样做比较简单<br>😥:  刚开始我单独将titleView添加到view上，collectionView滑动时还得一直更改<code>titleView.frame</code></li>
+</ol>
+<p>##聊聊感想哈<br>其实从OC转向Swift非常简单，这个项目不难，很适合从OC转向swift，或swift初学者。<br>少年也是第一次发布自己的项目，忘老鸟轻拍，新手共勉,有什么问题或bug联系我哈，欢迎来<a href="https://github.com/jiachenmu/Swift-BanTang" target="_blank" rel="external">我的GitHub</a>上赏个Star🌟</p>
+<p>##GitHub 代码下载地址<br><a href="https://github.com/jiachenmu/Swift-BanTang.git" target="_blank" rel="external">代码下载地址,给个star再走🙏</a><br><strong>直接打开运行工程</strong><br>￼<img src="http://upload-images.jianshu.io/upload_images/1299512-d0b3d3c1fcd7ed7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp1cbb03b9.png"></p>
+<p>##收到有童鞋反应说，会遇到这样的Bug导致无法运行<br><img src="http://upload-images.jianshu.io/upload_images/1299512-767663cc96358060.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp788532b0.png"></p>
+<p>Tips：由于GitHub上传的问题，解决办法如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1299512-ff192623db0d0fd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp44a0f1ff.png"></p>
+<p>###项目编写中用的切图、标注、及本地数据在我的百度云</p>
+<p><a href="http://pan.baidu.com/s/1dDZYetV" target="_blank" rel="external">切图、数据下载地址-ManoBpp的百度云</a></p>
+
+          </section>
+        </article>
+        
+
+       
+        <div class="pager">
+          
+            <a class="post-prev pager-item" href="/2016/06/30/iOS小项目之第一弹-壁纸天气/" >
+              <strong class="article-nav-caption">Newer</strong>
+              <p class="post-nav-title">iOS小项目之第一弹- 壁纸天气</p>
+            </a>
+          
+          
+            <a class="post-next pager-item" href="/2016/03/04/iOS，如何模仿一个App/">
+              <strong class="article-nav-caption">Older</strong>
+              <p class="post-nav-title">iOS，如何模仿一个App</p>
+            </a>
+          
+        </div>
+        
+
+         <!-- comments -->
+        <div class="comment-section">
+  
+    
+
+    <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="_posts/Swift2-0-高仿半塘App.md" data-title="Swift2.0 高仿半塘App" data-url="http://yoursite.com/2016/06/30/Swift2-0-高仿半塘App/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+      <script type="text/javascript">
+      var duoshuoQuery = {short_name:"wayouliu"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+
+  
+
+
+</div>
+
+    </div>
+    
+</div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+    <p>由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动，搭载<a href="https://github.com/wayou/hexo-theme-gstyle">gstyle</a>主题</p>
+    <p>
+        &copy; 2016 ManoBoo
+    </p>
+</footer>
+<script src="/lib/jquery.js"></script>
+<script src="/lib/waves.js"></script>
+<script src="/lib/jquery-ui.js"></script>
+<script src="/lib/jquery.tocify.js"></script>
+<script src="/js/main.js"></script>
+
+    </body>
+</html>
