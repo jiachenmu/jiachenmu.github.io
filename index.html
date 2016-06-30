@@ -1,418 +1,188 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>ManoBoo的技术小窝</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ManoBoo的技术博客，以后文章会和简书同步更新~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ManoBoo的技术小窝">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="ManoBoo的技术小窝">
-<meta property="og:description" content="ManoBoo的技术博客，以后文章会和简书同步更新~">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ManoBoo的技术小窝">
-<meta name="twitter:description" content="ManoBoo的技术博客，以后文章会和简书同步更新~">
-  
-    <link rel="alternative" href="/atom.xml" title="ManoBoo的技术小窝" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/img/avatar.png">
-  
-  
-  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-    
-    
-  
-  
-      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  
-  <!-- 加载特效 -->
-    <script src="/js/pace.js"></script>
-    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
-  <script>
-      var yiliaConfig = {
-          fancybox: true,
-          animate: true,
-          isHome: true,
-          isPost: false,
-          isArchive: false,
-          isTag: false,
-          isCategory: false,
-          open_in_new: false
-      }
-  </script>
-</head>
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/" class="profilepic">
+          <head>
+        <meta charset="utf-8">
             
-            <img lazy-src="/img/avatar.png" class="js-avatar">
+            <title>
+                ManoBoo的技术小窝
+            </title>
+            <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+            <meta name="theme-color" content="#4184f3">
             
-        </a>
+            
+            <link href="/favicon.ico" rel="icon"/>
+            
 
-        <hgroup>
-          <h1 class="header-author"><a href="/">ManoBoo</a></h1>
-        </hgroup>
+            <link rel="stylesheet" href="/css/highlight.light.css">
+            <link rel="stylesheet" href="/css/nav-icon.css">
+            <link rel="stylesheet" href="/css/waves.min.css">
+            <link rel="stylesheet" href="/css/jquery.tocify.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/nav-indicator.css">
+            
+  
 
-        
-        <p class="header-subtitle">欢迎来ManoBoo的小窝做客</p>
-        
-        
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
+  
+            </meta>
+        </meta>
+    </head>
+    <body>
+        <header>
+            <!-- cover image or sth. -->
+        </header>
+        <div id="main" class="m-scene">
+            <div class="nav-wrapper" style="background-color:undefined">
+    <div class="container">
+        <nav>
+            <div class="logo wave">
+                <a href="/" id="logo">
+                    ManoBoo的技术小窝
+                </a>
+            </div>
+            <div class="nav-toggle-icon" >
+                <div class="material-hamburger">
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                </div>
+            </div>
+            <div class="menu-wrapper">
+                <div class="nav-indicator">
+                </div>
+                <ul class="menus">
                     
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/">博客首页</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fl github" target="_blank" href="https://github.com/jiachenmu" title="github">github</a>
-                            
-                                <a class="fl Weibo" target="_blank" href="http://weibo.com/u/3484140182?is_all=1" title="Weibo">Weibo</a>
-                            
-                                <a class="fl NeteaseMusic" target="_blank" href="http://music.163.com/#/user/home?id=79418549" title="NeteaseMusic">NeteaseMusic</a>
-                            
-                                <a class="fl Jianshu" target="_blank" href="http://www.jianshu.com/users/232094594d02/latest_articles" title="Jianshu">Jianshu</a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/iOS-模仿-App/" style="font-size: 10px;">iOS 模仿 App</a>
-                    </div>
-                </section>
-                
-                
-                
-
-                
-                
-                <section class="switch-part switch-part3">
-                
-                    <div id="js-aboutme">iOS开发者，写代码是一件非常happy的事情😄</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>                
-</div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">ManoBoo</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                
-                    <img lazy-src="/img/avatar.png" class="js-avatar">
-                
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">ManoBoo</a></h1>
-            </hgroup>
-            
-            <p class="header-subtitle">欢迎来ManoBoo的小窝做客</p>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/">博客首页</a></li>
-                
-                <div class="clearfix"></div>
+                     
+                        <li>
+                            <a class="wave " href="/">
+                                Home
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/archives">
+                                Archive
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/about">
+                                About
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave no-smoothstate" href="/atom.xml">
+                                RSS
+                            </a>
+                        </li>
+                     
+                    
+                   
                 </ul>
-            </nav>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a class="github" target="_blank" href="https://github.com/jiachenmu" title="github">github</a>
-                    
-                        <a class="Weibo" target="_blank" href="http://weibo.com/u/3484140182?is_all=1" title="Weibo">Weibo</a>
-                    
-                        <a class="NeteaseMusic" target="_blank" href="http://music.163.com/#/user/home?id=79418549" title="NeteaseMusic">NeteaseMusic</a>
-                    
-                        <a class="Jianshu" target="_blank" href="http://www.jianshu.com/users/232094594d02/latest_articles" title="Jianshu">Jianshu</a>
-                    
-                </div>
-            </nav>
-        </header>                
+            </div>
+        </nav>
     </div>
-</nav>
-      <div class="body-wrap">
-  
-    <article id="post-iOS，如何模仿一个App" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/04/iOS，如何模仿一个App/" class="article-date">
-      <time datetime="2016-03-04T02:42:00.000Z" itemprop="datePublished">2016-03-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/04/iOS，如何模仿一个App/">iOS，如何模仿一个App</a>
-    </h1>
-  
+</div>
+            <div class="container content">
+                <div class="scene_element scene_element--fadein">
+                     <div class="row">
+  <div class="main">
 
+  
+    <article>
+      
+      <header class="post-header">
+      
+        <h1 class="post-title"><a href="/2016/03/04/iOS，如何模仿一个App/" title="iOS，如何模仿一个App" >iOS，如何模仿一个App</a></h1>
       </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+
+       <section class="post-info">
+        <span class="post-date">2016/3/4</span>
           
-        <p>##前言<br>作为一个IOS程序员，闲的时候也想自己做一个app练练手，又苦于没有UI设计，也没有好的idea，所以只能先模仿别人的App了，但是也会遇到以下问题<br><strong><br>①不知道怎么入手？怎么设计
-</strong><br><strong><br>②app中的素材、图标要自己找吗、没有UI妹子给你切图怎么办，
-</strong><br><strong><br>③没有数据怎么办？假数据也不会做怎么办
-</strong><br><strong><br>④编写程序中该注意些什么
-</strong></p>
-<p>###<strong> 以下就从上面的三点开始介绍</strong><br>Tips:一下均为我个人的见解，有疑问或者建议请告诉我<br>以我的高仿项目<a href="http://www.jianshu.com/p/7b57eb0c4abe" target="_blank" rel="external">半糖App</a>为例</p>
-<p><strong>
-</strong></p>
-<p>###一、不知道怎么入手？怎么设计<br>首先，整体浏览一下官方的<a href="http://www.ibantang.com" target="_blank" rel="external">半糖App</a>,</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1299512-d02348459fbb12d0.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="
-![
-![
-![IMG_0095.PNG](http://upload-images.jianshu.io/upload_images/1299512-202a765f086ca351.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)](http://upload-images.jianshu.io/upload_images/1299512-fc3a2b9ccf1b9894.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)](http://upload-images.jianshu.io/upload_images/1299512-ca997e779c4318c4.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)"></p>
-<p>上面几张图片分别对应的是 首页、广场、消息中心、个人中心，，rootViewController是 UITabBarController,以首页为例</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1299512-69ab39b354c62f1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp696dc36e.png"><br>Tips:</p>
-<ul>
-<li>1 整体上分为 两大部分 headerView 和UICollectionView</li>
-<li>2 每次点击标签 “最新” “热门”等，collectionView 都会滚动到对应标签的tableView中，<br><strong>collectionView结构上来看就是这样：</strong></li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/1299512-1ec9970356f439fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp59d229d4.png"></p>
-<p>也就是  tableview 添加到collectionViewCell.contentView中显示出来</p>
-<p><em>*headerView的结构如下</em><br><img src="http://upload-images.jianshu.io/upload_images/1299512-19dd06f7a0b5f760.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp5b876e7d.png">*<br>这一部分组合的自由度较大，然后每个按钮都设置不同tag，然后所有按钮添加相同的方法，比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- (void)clickCenterWithTag:(UIButton *)sender&#123;</div><div class="line">  if(sender.tag == 按钮tag值)&#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>当然也可以设置一个block回调，参数为按钮tag值，在ViewController中 给block赋值的时候，比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">headerView.clickCenterBlock = ^(Int tag)&#123;</div><div class="line">  //在这里进行判断，tag等于多少，进行什么操作</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>还有通知、delegate等方法都可以，就不一一细说了。。</p>
-<p>#####之后的页面没有太过于复杂的结构，对照首页，也可以一一将View剥离出来<br><strong>
-</strong></p>
-<p>###二、app中的素材、图标要自己找吗、没有UI妹子给你切图怎么办</p>
-<p>######①  app中好多按钮的图标、背景图片哪里找<br><strong>大招</strong>：电脑上在iTunes中下载你要模仿的app，找到它的存储目录(具体方法百度。)<br><img src="http://upload-images.jianshu.io/upload_images/1299512-7593ba963100b291.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp09a816eb.png"><br>接着，把 后缀.ipa 改为.zip ,然后把 zip文件打开</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1299512-88813da3b9ed3f1a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp062cdaed.png"><br>显示包内容后，可以看到大部分你所需要的素材图片了</p>
-<p>######②  切图标注问题(切图我就不说了，我只会截图，ps什么的都不会)<br>手机安装你要模仿的app，然后截屏，把图片发到电脑上，然后安装<strong>Mark Man</strong>工具，</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1299512-e6278fa083cfbac7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp1e090874.png"><br>，然后将图片拖到Mark Man中，</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1299512-ff66476405710e99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp1be40fe1.png"></p>
-<p>然后就可以随心所欲地标注，取色等等<br><strong>
-</strong></p>
-<p>###三、没有数据怎么办？该怎么去抓包<br>没有数据有两个方法：<br>① 做假数据，数据写死，这个不是很现实，因为你要模仿的app肯定有图片，这么做假数据得到猴年马月。。。<br>② 抓包，其实过程不是很繁琐<br>下面讲一下抓包的过程：</p>
-<h4 id="1-工具"><a href="#1-工具" class="headerlink" title="* 1 工具"></a>* 1 工具</h4><p><img src="http://upload-images.jianshu.io/upload_images/1299512-a5ea0ed9c0ba754c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp4f89f5bc.png"></p>
-<p>Charles 百度上很多可以下载，试用版即可，不需要破解</p>
-<p><strong>使用过程:</strong></p>
-<p>######①将手机和电脑连上同一个wifi，打开抓包工具</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1299512-e5025717b7666b80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp1be62615.png"></p>
-<p>######②打开半糖app<br><img src="http://upload-images.jianshu.io/upload_images/1299512-45f1dd3ca0742236.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp11e3e193.png"></p>
-<p>抓到半糖app的数据，点进去如下：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1299512-1092bf90c5678583.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp6226dd3d.png"><br>这就是半糖app的数据，如果没有你想要的，别急，你先浏览你要抓数据的页面，这时候会发现这个目录有新的数据返回，点进去可以看到<br><img src="http://upload-images.jianshu.io/upload_images/1299512-24e906d1350288ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp7a92a51b.png"></p>
-<p>点击  JavaScript按钮可以看到原始的json数据</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1299512-7f6120f56d33748f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp7e5e4b14.png">，<br>将json数据 拷贝到文件中存储起来，这就是本地数据</p>
-<p>②下面说一下 <strong>如何解析数据</strong>，以swift为例，OC类似参考一下。<br>比如我们将刚刚的json存为 test.rtf(别问我为什么是rtf，因为mac上记事本只有这么一个,当然你也可以存为txt格式等)，然后把test.rtf拖到项目中来</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1299512-c85e52b34db68ea9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp4554b12a.png"><br>上代码：<br>Tips: 在这里，我们首先要明白一点，字典即为对象的一种表现形式。<br>先把模型写好：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">class TopicModel: NSObject &#123;</div><div class="line">  //先写两个属性</div><div class="line">  var id: String?</div><div class="line">  var title: String?</div><div class="line"></div><div class="line">  //从json中读取数据 并给model赋值(以下为Swift代码，OC请参考)，封装成类方法更方便</div><div class="line">  class fun readDataFromJSON() -&gt; TopicModel&#123;</div><div class="line">    //创建返回的model </div><div class="line">    let topicModel = TopicModel()</div><div class="line">    //读取JSON文件</div><div class="line">    let path = NSBundle.mainBundle().pathForResource(&quot;test&quot;, ofType: &quot;rtf&quot;)</div><div class="line">    let nsData = NSData(contentsOfFile: path!)</div><div class="line">     /// json整体转换为字典</div><div class="line">     let Dict = ( try! NSJSONSerialization.JSONObjectWithData(nsData!, options:.AllowFragments) ) as! NSDictionary</div><div class="line"></div><div class="line">  //看上面的图片中，你要抓得数据处于 四层目录下，一步一步来</div><div class="line"></div><div class="line">  //先把 &quot;data&quot;从json文件中 剥离出来</div><div class="line">    let Data = Dict.objectForKey(&quot;data&quot;) as! NSDictionary</div><div class="line">  </div><div class="line">  //从Data 中把 &quot;topic&quot;数组剥离出来,由图片可以看到 topic是一个数组 ，存了好多个相同类型的数据</div><div class="line">    let topicData = Data.objectForKey(&quot;topic&quot;) as! NSArray</div><div class="line"></div><div class="line">  //topic数据已经获取，我们先将第一个元素剥离出来，</div><div class="line">  // 定义一个object对象,并转换为字典类型</div><div class="line">  let obj = topicData[0] as! NSDictionary</div><div class="line">    </div><div class="line">// 现在将obj字典的值 赋给 我们定义的topicModel</div><div class="line">  topicModel.id = obj.objectForKey(&quot;id&quot;) as? String</div><div class="line">  topicModel.title = obj.objectForKey(&quot;title&quot;) as? String</div><div class="line"></div><div class="line">    //end: 到现在 给model赋值就可以了，返回model即可</div><div class="line"></div><div class="line">  return topicModel</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>在需要用到model的地方，直接调用 Topic.readFromJSON 就会返回你要的model</p>
-<p><strong>现在看来，抓包并没有我们想象中的繁琐 </strong></p>
-<p>###四、编写程序应该注意什么<br>Tips: 这一部分只是参照我的经验来看，如有建议或者意见请与我交流，望不吝赐教</p>
-<p>#####<strong>① 代码尽量要复用，封装控件前看看是否几个控件相似，可以放到一起，比如：</strong></p>
-<p>这个是 广场中的标签栏<br><img src="http://upload-images.jianshu.io/upload_images/1299512-6f0e6bcb53bfa569.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp154d38d0.png"></p>
-<p>这个是个人中心的标签栏</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1299512-bfbd47b136aaa47b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp05e7ce45.png"></p>
-<p>这个是清单详情的标签栏</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1299512-7af7cce080989029.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp69f75d0d.png"></p>
-<p>三个控件有不相同的地方，比如标签中的分割线，上面的边框，字体大小，<strong>但是</strong>，控件中的所有逻辑都一样，这就够了，可以写一个控件，加一些参数，比如说 是否显示边框，frame大小，中间是否有分割线，这样做的话，封装一个控件就可以满足 整个app中类似的控件</p>
-<p>#####<strong>② 方法，或者称之为函数，封装也尽量放到一起，比如</strong><br>app中有很多对图片进行的操作，诸如 放大，裁剪，加边框，可以这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//将 这些方法都封装为 类方法 ，OC中也就是 &quot;+&quot;方法</div><div class="line">class ImageOperationCenter: NSObejct &#123;</div><div class="line"></div><div class="line">    class func ScaleToFize(image: UIImage) -&gt; UIImage &#123;</div><div class="line">      //对图片进行裁剪处理，并返回</div><div class="line">    &#125;</div><div class="line">    class func MakeScale(image: UIImage,scale: CGFloat) -&gt; UIImage &#123;</div><div class="line">      //对图片进行放大处理，并返回</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Tips：如上，将对图片的处理方法，都放在 <code>ImageOperationCenter</code> 这个类中，调用的时候只需要像这样 <code>let image = ImageOperationCenter.MakeScale(源照片，放大倍数)</code>即可，用着也方便</p>
-<p>#####<strong>③ 与第一点类似，很多相似的控件，Cell尽量复用</strong><br>诸如 <img src="http://upload-images.jianshu.io/upload_images/1299512-7af7cce080989029.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp69f75d0d.png"><br>半糖精选的cell  与 用户推荐的cell 类似，但是有不同的地方，而且用到的model也不同，这样我们就要重写两种cell吗，<strong>不需要</strong>，只要 “用户推荐”的cell 继承 “半糖精选” 的cell，重写里面的方法即可，省了好多功夫，所以写程序一定<strong>要在不损失质量的前提下</strong>怎么省事怎么来</p>
-<p>######再来看一个例子。<br><img src="http://upload-images.jianshu.io/upload_images/1299512-6ddaca9337de3424.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tmp63efa8a5.png"></p>
-<p>这个通常会将它作为<code>collectionView</code>处理，其实，只有8个button的情况下，将button封装为一个View即可，这样，<code>ViewController</code>中会<strong>少了一堆代理方法和一堆初始化collectionView方法</strong><br>这个也就因人而异吧，要灵活运用哦~</p>
-<p>#####<strong>⑤ 其实看到一个页面要先把整个页面的结构确定好，不要写了一半才发现这样写好像太麻烦，或者这样写写不出来</strong><br>我在我的高仿半糖app中 首页就遇到了这样的问题，开始想着 用<code>UIScrollView</code>当做容器，里面添加<code>UITableView</code>显示内容，这样做未尝不可，但是考虑到复用的问题，可以用三个tableView完成复用，但是这样做过于麻烦，所以后来就用collectionView当做容器，将tableView 添加到collectionViewCell中显示出来，这样复用的问题就解决了</p>
-<p>###写在后面的话<br>我的开发经验也不多，上面完全是我在做项目中自己的感悟和体会，有些可能会有问题，请参考即可</p>
+          
+          <span class="post-tags">
+            <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/iOS-模仿-App/">iOS 模仿 App</a></li></ul>
+          </span>
+          
+        <!-- <span class="read-more btn"><a href="/2016/03/04/iOS，如何模仿一个App/" >More...</a></span> -->
+      </section>
 
+      <section class="post-abstract">
+        
+          ##前言作为一个IOS程序员，闲的时候也想自己做一个app练练手，又苦于没有UI设计，也没有好的idea，所以只能先模仿别人的App了，但是也会遇到以下问题①不知道怎么入手？怎么设计
+②app中的素...
+        
+      </section>
       
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-模仿-App/">iOS 模仿 App</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
+    </article>
+  
+  
+  
+  
   </div>
   
-</article>
+    <aside>
+        
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/03/04/iOS，如何模仿一个App/">iOS，如何模仿一个App</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+    
+  <section class="widget-wrap">
+    <h3 class="widget-title">links</h3>
+    <div class="widget">
+	    <ul >
+	        
+	        <li>
+	            <a href="http://www.github.com/wayou" title="码农之家">
+	                GitHub
+	            </a>
+	        </li>
+	        
+	        <li>
+	            <a href="http://www.weibo.com/liuwayong" title="twitter的本地化版本">
+	                微博
+	            </a>
+	        </li>
+	        
+	    </ul>
+    </div>
+  </section>
 
 
 
 
-
-
-
-
-
-  
+    </aside>
   
 </div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2016 ManoBoo
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+
+                </div>
             </div>
         </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >访问量: 
-                            <span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>, </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
-    </div>
+        <footer class="footer">
+    <p>由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动，搭载<a href="https://github.com/wayou/hexo-theme-gstyle">gstyle</a>主题</p>
+    <p>
+        &copy; 2016 ManoBoo
+    </p>
 </footer>
-
-    </div>
-    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/lib/jquery.js"></script>
+<script src="/lib/waves.js"></script>
+<script src="/lib/jquery-ui.js"></script>
+<script src="/lib/jquery.tocify.js"></script>
 <script src="/js/main.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            var backgroundnum = 24;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-        })
-    </script>
-
-
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
-</div>
-<script>
-    $(document).ready(function() {
-        if ($("#comments").length < 1) {
-            $("#scroll > a:nth-child(2)").hide();
-        };
-    })
-</script>
-
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-  <script language="javascript">
-    $(function() {
-        $("a[title]").each(function() {
-            var a = $(this);
-            var title = a.attr('title');
-            if (title == undefined || title == "") return;
-            a.data('title', title).removeAttr('title').hover(
-
-            function() {
-                var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
-                    left: offset.left + a.outerWidth()/2 + 1
-                }).fadeIn(function() {
-                    var pop = $(this);
-                    setTimeout(function() {
-                        pop.remove();
-                    }, pop.text().length * 800);
-                });
-            }, function() {
-                $("#anchortitlecontainer").remove();
-            });
-        });
-    });
-</script>
-
-
-  </div>
-</body>
+    </body>
 </html>
