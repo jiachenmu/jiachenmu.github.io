@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+          <head>
+        <meta charset="utf-8">
+            
+            <title>
+                iOS Reactive Cocoa使用浅析 | ManoBoo的技术小窝
+            </title>
+            <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+            <meta name="theme-color" content="#4184f3">
+            
+            
+            <link href="/favicon.ico" rel="icon"/>
+            
+
+            <link rel="stylesheet" href="/css/highlight.light.css">
+            <link rel="stylesheet" href="/css/nav-icon.css">
+            <link rel="stylesheet" href="/css/waves.min.css">
+            <link rel="stylesheet" href="/css/jquery.tocify.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/nav-indicator.css">
+            
+  
+
+  
+            </meta>
+        </meta>
+    </head>
+    <body>
+        <header>
+            <!-- cover image or sth. -->
+        </header>
+        <div id="main" class="m-scene">
+            <div class="nav-wrapper" style="background-color:undefined">
+    <div class="container">
+        <nav>
+            <div class="logo wave">
+                <a href="/" id="logo">
+                    ManoBoo的技术小窝
+                </a>
+            </div>
+            <div class="nav-toggle-icon" >
+                <div class="material-hamburger">
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                </div>
+            </div>
+            <div class="menu-wrapper">
+                <div class="nav-indicator">
+                </div>
+                <ul class="menus">
+                    
+                     
+                        <li>
+                            <a class="wave " href="/">
+                                Home
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/archives">
+                                Archive
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/about">
+                                About
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave no-smoothstate" href="/atom.xml">
+                                RSS
+                            </a>
+                        </li>
+                     
+                    
+                   
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+            <div class="container content">
+                <div class="scene_element scene_element--fadein">
+                    <div class="row">
+    <div class="main">
+        <article>
+          
+          <header class="post-header">
+          
+          </header>
+          <h1 class="post-title">iOS Reactive Cocoa使用浅析</h1>
+
+          <section class="post-info">
+            <span class="post-date">2016/7/4</span>
+            
+            
+            <span class="post-tags">
+              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/ReactiveCocoa/">ReactiveCocoa</a></li></ul>
+            </span>
+            
+          </section>
+
+          <section class="post-content">
+            <h1 id="iOS-Reactive-Cocoa使用浅析"><a href="#iOS-Reactive-Cocoa使用浅析" class="headerlink" title="iOS Reactive Cocoa使用浅析"></a>iOS Reactive Cocoa使用浅析</h1><p>标签（空格分隔）： ReactiveCocoa简单使用</p>
+<hr>
+<p>##<strong>目录：</strong></p>
+<p>[TOC]</p>
+<p>##Reactive Cocoa浅析</p>
+<blockquote>
+<p>ReactiveCocoa是响应式编程(FRP)在IOS中的一个实现框架,<a href="https://github.com/ReactiveCocoa/ReactiveCocoa" target="_blank" rel="external">Github地址</a></p>
+</blockquote>
+<p>###1.什么是响应式编程<br>推荐一个网址<a href="http://www.tuicool.com/articles/BBNRRf" target="_blank" rel="external">响应式编程（Reactive Programming）介绍</a>,如果不太清楚，那么我们首先来了解一下其他的编程思想</p>
+<p>####1.面向过程：</p>
+<blockquote>
+<p>“面向过程”(Procedure Oriented)是一种以过程为中心的编程思想。“面向过程”也可称之为“面向记录”编程思想，他们不支持丰富的“面向对象”特性（比如继承、多态），并且它们不允许混合持久化状态和域逻辑。</p>
+</blockquote>
+<p>C语言就是一门面向过程的语言。</p>
+<p>####2.面向对象</p>
+<blockquote>
+<p>面向对象语言（Object-Oriented Language）是一类以对象作为基本程序结构单位的程序设计语言，指用于描述的设计是以对象为核心，而对象是程序运行时刻的基本成分。语言中提供了类、继承等成分。</p>
+<p>万物皆对象</p>
+</blockquote>
+<p>典型的面向对象的编程语言有C++,C#,Java等 </p>
+<p>####3.链式编程</p>
+<blockquote>
+<p>是将多个操作（多行代码）通过点号(.)链接在一起成为一句代码,使代码可读性好<br>在<code>Objective-C</code>中的形式类似于下面这种形式</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Person *per = [[Person allo] init];</div><div class="line">per.eat().drink().sleep();</div></pre></td></tr></table></figure>
+<p><strong>用一个<a href="https://github.com/jiachenmu/ReactiveCocoaDemo" target="_blank" rel="external">计算器Demo</a>来简单说明什么是链式编程</strong><br>这是我写的一个非常简单的计算器<br><strong>Calculator.h</strong>文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#import &lt;Foundation/Foundation.h&gt;</div><div class="line"></div><div class="line">@class Calculator;</div><div class="line">typedef Calculator *(^CalculatorBlock)(double num);</div><div class="line"></div><div class="line">@interface Calculator : NSObject</div><div class="line"></div><div class="line">+ (instancetype)opeartionNum:(double)num;</div><div class="line"></div><div class="line">@property (assign, nonatomic) double opeartionNum;</div><div class="line"></div><div class="line">//加--减--乘--除</div><div class="line"></div><div class="line">@property (copy, nonatomic) CalculatorBlock add;</div><div class="line">@property (copy, nonatomic) CalculatorBlock reduce;</div><div class="line">@property (copy, nonatomic) CalculatorBlock multiply;</div><div class="line">@property (copy, nonatomic) CalculatorBlock divide;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure></p>
+<p><strong>Calculator.m</strong>文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">#import &quot;Calculator.h&quot;</div><div class="line"></div><div class="line">@implementation Calculator</div><div class="line"></div><div class="line">- (instancetype)init</div><div class="line">&#123;</div><div class="line">    self = [super init];</div><div class="line">    if (self) &#123;</div><div class="line">        [self buildBlock];</div><div class="line">    &#125;</div><div class="line">    return self;</div><div class="line">&#125;</div><div class="line"></div><div class="line">+ (instancetype)opeartionNum:(double)num &#123;</div><div class="line">    Calculator *calu = [[Calculator alloc] init];</div><div class="line">    calu.opeartionNum = num;</div><div class="line">    </div><div class="line">    return calu;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)buildBlock &#123;</div><div class="line">    __weak typeof(self) weakSelf = self;</div><div class="line">    _add = ^Calculator *(double num)&#123;</div><div class="line">        weakSelf.opeartionNum += num;</div><div class="line">        return weakSelf;</div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    _reduce = ^Calculator *(double num)&#123;</div><div class="line">        weakSelf.opeartionNum -= num;</div><div class="line">        return weakSelf;</div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    _multiply = ^Calculator *(double num)&#123;</div><div class="line">        weakSelf.opeartionNum *= num;</div><div class="line">        return weakSelf;</div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    _divide = ^Calculator *(double num)&#123;</div><div class="line">        //除数为0 不作处理</div><div class="line">        weakSelf.opeartionNum = _opeartionNum / (num == 0 ? 1 : num);</div><div class="line">        return weakSelf;</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure></p>
+<p>这个Demo非常简单，说的只是链式编程的一个思想,从中我们可以看到，<code>加</code> <code>减</code> <code>乘</code> <code>除</code>四个Block，返回的均是当前对象，<br>我们怎么使用呢<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//开始计算</div><div class="line">    Calculator *calu = [Calculator opeartionNum:10.00];</div><div class="line">    calu.add(2).reduce(2).multiply(2).divide(0);</div><div class="line">    //输出结果</div><div class="line">    NSLog(@&quot;result : %f&quot;,calu.opeartionNum);</div></pre></td></tr></table></figure></p>
+<p>####3.响应式编程<br>我们先看看<strong>KVO</strong>(Key-Value Observing),直译过来也就是键值观察者模式，监听某个属性的变化，每次指定的被观察的对象的属性被修改后，KVO就会自动通知相应的观察者了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//注册观察者和被观察的属性路径</div><div class="line">[xiaoming addObserver:self forKeyPath:@&quot;age&quot; options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];</div><div class="line"></div><div class="line">//接受属性变化的消息</div><div class="line">- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context</div><div class="line"> &#123;</div><div class="line">     if ([keyPath isEqualToString:@&quot;age&quot;] &amp;&amp; object == xiaoming) &#123;</div><div class="line">        NSLog(@&quot;小明的年龄发生变化&quot;);</div><div class="line">     &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p>接下来介绍一下iOS中一个响应式编程框架<strong>ReactiveCocoa</strong><br>关于响应式编程的概念，我推荐看看上面推荐的那篇帖子<a href="http://www.tuicool.com/articles/BBNRRf" target="_blank" rel="external">响应式编程（Reactive Programming）介绍</a>，举的例子是<code>RxJS</code>，不过整体的概念与<code>ReactiveCocoa</code>无异，吸收思想即可。</p>
+<hr>
+<h2 id="2-ReactiveCocoa响应式编程框架"><a href="#2-ReactiveCocoa响应式编程框架" class="headerlink" title="###2.ReactiveCocoa响应式编程框架"></a>###2.ReactiveCocoa响应式编程框架</h2><p><code>ReactiveCocoa</code>中常用到的是<code>RACSignal</code>,<code>RACSignal</code>继承自<code>RACStream</code>,<code>Stream</code>这个概念，直译过来也就是<code>事件流</code>的意思，那何为<code>数据流</code>，事件流就是一个按时间排序的Events序列，在这里引用<a href="http://www.tuicool.com/articles/BBNRRf" target="_blank" rel="external">响应式编程（Reactive Programming）介绍</a>其中的介绍，<br><strong>响应式编程使用异步数据流进行编程</strong><br>举个通俗的例子说明事件流：<strong>如何把大象塞进冰箱？</strong></p>
+<blockquote>
+<ol>
+<li>打开冰箱门</li>
+<li>把大象塞进冰箱</li>
+<li>关上冰箱门</li>
+</ol>
+</blockquote>
+<p>上述三个步骤组合起来就成为一个按时间排序的时间序列，即<code>事件流</code></p>
+<hr>
+<p>####1.<code>ReactiveCocoa</code>的核心方法</p>
+<hr>
+<p>打开<code>RACStream</code>可以看到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// Lazily binds a block to the values in the receiver.</div><div class="line">///</div><div class="line">/// This should only be used if you need to terminate the bind early, or close</div><div class="line">/// over some state. -flattenMap: is more appropriate for all other cases.</div><div class="line">///</div><div class="line">/// block - A block returning a RACStreamBindBlock. This block will be invoked</div><div class="line">///         each time the bound stream is re-evaluated. This block must not be</div><div class="line">///         nil or return nil.</div><div class="line">///</div><div class="line">/// Returns a new stream which represents the combined result of all lazy</div><div class="line">/// applications of `block`.</div><div class="line"></div><div class="line">- (instancetype)bind:(RACStreamBindBlock (^)(void))block;</div></pre></td></tr></table></figure></p>
+<p>关于其中各个属性的意思，可以看<a href="http://mobile.51cto.com/news-494321.htm" target="_blank" rel="external">RACStreamBindBlock介绍和使用</a>，其中对于各个属性有详细的介绍，<code>bind</code>这个思想理解即可，<code>RAC</code>已经封装了很多更方便的方法供我们使用。</p>
+<hr>
+<p>####2.<code>ReactiveCocoa</code>的整体结构介绍</p>
+<hr>
+<p><strong><code>ReactiveCocoa</code>整体可以分为四个部分</strong></p>
+<ol>
+<li>信号源(事件流)    <code>RACStream</code>      </li>
+<li>订阅者    <code>RACSubscriber</code></li>
+<li>调度器    <code>RACScheduler</code></li>
+<li>清洁工    <code>RACDisposable</code></li>
+</ol>
+<hr>
+<p>#####1.信号源(事件流)    <code>RACStream</code><br>举个例子：在一个具有多重UI状态的界面中，我们要实现一下几个功能</p>
+<ul>
+<li>1 用户名和密码输入框字数超过限制时改变输入框背景颜色</li>
+<li>2 用户名和密码无效和有效时登录按钮的背景颜色设置</li>
+</ul>
+<hr>
+<p><strong>拿第一个问题当做例子</strong><br>我们平时怎么实现的呢，无非就是继承<code>UITextFieldDelegate</code>，在代理中判断输入框中的文字个数是否超过限制，然后改变背景颜色，亦或用KVO实现，这样做无可厚非，但是模板化过于严重，我们想做这个功能，需要声明代理，实现代理方法，同时代理方法中还需要判断<code>delegate</code>中的<code>textfield</code>是用户名输入框还是密码输入框，这样做不仅代码不仅冗长，而且会造成代码不易查看。<br><strong>那么在RAC中我们怎么做呢，看代码</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> //将ViewModel中的属性和控件中的属性绑定到一起</div><div class="line">RAC(_userViewModel,userName) = [_userNameFeild rac_textSignal];</div><div class="line">RAC(_userNameFeild,backgroundColor) = [_userNameFeild.rac_textSignal  </div><div class="line">map:^id(NSString *password) &#123;</div><div class="line">        return weakSelf.userViewModel.isUserNameValid ? [UIColor whiteColor] : [UIColor redColor];</div><div class="line">    &#125;];</div></pre></td></tr></table></figure></p>
+<hr>
+<p>Tips_1: 这一部分我们可以配合<code>MVVM</code>设计模式使用，将ViewModel与控件绑定到一起，减轻<code>ViewController</code>的负担。<br>具体这一部分的Demo可以查看文末的Github链接，只是一个简单使用<br>Tips_2: 由上可以看到，我们可以将某个功能的代码写的更加集中，更加方便阅读和维护</p>
+<hr>
+<p>#####2.订阅者 <code>RACSubscriber</code><br>在整个<code>RAC</code>中，我们基本上都是采用<code>信号源-订阅者</code>的这种模式来使用<code>RAC</code>,为了获取到信号源中的value，我们需要订阅这个信号源。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[_userNameFeild.rac_textSignal subscribeNext:^(id x) &#123;</div><div class="line">        NSLog(@&quot;%@&quot;,x);</div><div class="line">    &#125;];</div></pre></td></tr></table></figure></p>
+<p>Tips: 我们查看源代码可以发现<code>_userNameFeild.rac_textSignal</code>实现过程就是监听所有的<code>UIControlEventAllEditingEvents</code>事件，然后发出信号，然后我们订阅这个信号源，可以获取到其中的值<code>x</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">- (RACSignal *)rac_textSignal &#123;</div><div class="line">	@weakify(self);</div><div class="line">	return [[[[[RACSignal</div><div class="line">		defer:^&#123;</div><div class="line">			@strongify(self);</div><div class="line">			return [RACSignal return:self];</div><div class="line">		&#125;]</div><div class="line">		concat:[self rac_signalForControlEvents:UIControlEventAllEditingEvents]]</div><div class="line">		map:^(UITextField *x) &#123;</div><div class="line">			return x.text;</div><div class="line">		&#125;]</div><div class="line">		takeUntil:self.rac_willDeallocSignal]</div><div class="line">		setNameWithFormat:@&quot;%@ -rac_textSignal&quot;, RACDescription(self)];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>好了，上面讲了那么多理论知识，具体如何使用请看下面</p>
+<hr>
+<p>#####3.调度器<code>RACSubscriber</code> 和 清洁工<code>RACDisposable</code></p>
+<ul>
+<li>1 调度器RACSubscriber，这一部分是使用GCD的串行队列来实现的，文末Github链接中有对其的简单使用</li>
+<li><p>2 清洁工RACDisposable</p>
+<blockquote>
+<p><code>RACDisposable</code> 在 <code>ReactiveCocoa</code> 中就充当着清洁工的角色，它封装了取消和清理一次订阅所必需的工作。它有一个核心的方法 <code>-dispose</code> ，调用这个方法就会执行相应的清理工作，这有点类似于 <code>NSObject</code> 的 <code>-dealloc</code> 方法。</p>
+</blockquote>
+<p>:我们上面使用<code>subscribeNext:^(id x) {}</code>这个方法订阅信号源进行处理之后会生成一个清洁工<code>RACDisposable</code>,我们可以手动的调用<code>dispose</code>方法来进行清理工作。</p>
+</li>
+</ul>
+<hr>
+<h2 id="Reactive-Cocoa使用"><a href="#Reactive-Cocoa使用" class="headerlink" title="##Reactive Cocoa使用"></a>##Reactive Cocoa使用</h2><p>###* 1 RAC发送消息,并且绑定到控件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">- (void)racSenderMessage &#123;</div><div class="line">    //延迟2.0S 发送&quot;呵呵哒~&quot;消息</div><div class="line">    RACSignal *signal = [[RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        [subscriber sendNext:@&quot;呵呵哒~&quot;];</div><div class="line">        [subscriber sendCompleted];</div><div class="line">        return nil;</div><div class="line">    &#125;] delay:2.0];</div><div class="line">    //将_userNameFeild的`text`属性与映射后的信号量的值绑定到一起</div><div class="line">    RAC(_userNameFeild,text) = [signal map:^id(NSString *value) &#123;</div><div class="line">        if ([value isEqualToString:@&quot;呵呵哒~&quot;]) &#123;</div><div class="line">            return @&quot;么么哒~&quot;;</div><div class="line">        &#125;</div><div class="line">        return nil;</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>###* 2 RAC代理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">- (void)racProtocol &#123;</div><div class="line">    RACSignal *programmerSignal = [self rac_signalForSelector:@selector(whoAmI) fromProtocol:@protocol(Programmer)];</div><div class="line">    </div><div class="line">    [programmerSignal subscribeNext:^(id x) &#123;</div><div class="line">        NSLog(@&quot;RAC通知------I&apos;m a great programmer...&quot;);</div><div class="line">    &#125;];</div><div class="line">    @weakify(self);</div><div class="line">    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</div><div class="line">        [self_weak_ whoAmI];</div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)whoAmI &#123;</div><div class="line">    NSLog(@&quot;whoAmI------my name is %@&quot;,_user.userName);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>###* 3 RAC通知<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (void)racNotification &#123;</div><div class="line">    //接受通知并且处理</div><div class="line">    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:@&quot;RAC_Notifaciotn&quot; object:nil] subscribeNext:^(NSNotification *notify) &#123;</div><div class="line">        NSLog(@&quot;notify.content = %@&quot;,notify.userInfo[@&quot;content&quot;]);</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    //发出通知</div><div class="line">    [[NSNotificationCenter defaultCenter] postNotificationName:@&quot;RAC_Notifaciotn&quot; object:nil userInfo:@&#123;@&quot;content&quot; : @&quot;i&apos;m a notification&quot;&#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>###* 4 RAC信号拼接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">- (void)racSignalLink &#123;</div><div class="line">    RACSignal *signal1 = [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        [subscriber sendNext:@(1)];</div><div class="line">        [subscriber sendCompleted];</div><div class="line">        return nil;</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    RACSignal *signal2 = [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        [subscriber sendNext:@(2)];</div><div class="line">        [subscriber sendCompleted];</div><div class="line">        </div><div class="line">        return nil;</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    [[signal1 concat:signal2] subscribeNext:^(NSNumber *value) &#123;</div><div class="line">        NSLog(@&quot;RAC信号拼接------value = %@&quot;,value);</div><div class="line">    &#125;];;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">2016-07-02 14:34:16.148 ReactiveCocoaMVVMDemo[1362:1245988] RAC信号拼接------value = 1</div><div class="line">2016-07-02 14:34:16.148 ReactiveCocoaMVVMDemo[1362:1245988] RAC信号拼接------value = 2</div></pre></td></tr></table></figure></p>
+<hr>
+<p>###* 5 RAC信号合并<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">- (void)racSignalMerge &#123;</div><div class="line">    RACSignal *signal1 = [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        [subscriber sendNext:@&quot;清纯妹子&quot;];</div><div class="line">        [subscriber sendCompleted];</div><div class="line">        return nil;</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    RACSignal *signal2 = [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        [subscriber sendNext:@&quot;性感妹子&quot;];</div><div class="line">        [subscriber sendCompleted];</div><div class="line">        </div><div class="line">        return nil;</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    [[signal1 merge:signal2] subscribeNext:^(id x) &#123;</div><div class="line">        NSLog(@&quot;RAC信号合并------我喜欢： %@&quot;,x);</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">2016-07-02 14:34:16.149 ReactiveCocoaMVVMDemo[1362:1245988] RAC信号合并------我喜欢： 清纯妹子</div><div class="line">2016-07-02 14:34:16.149 ReactiveCocoaMVVMDemo[1362:1245988] RAC信号合并------我喜欢： 性感妹子</div></pre></td></tr></table></figure></p>
+<hr>
+<p>###* 6 RAC信号组合<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">- (void)racSignalCombine &#123;</div><div class="line">    RACSignal *signal1 = [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        [subscriber sendNext:@&quot;年轻&quot;];</div><div class="line">        [subscriber sendNext:@&quot;清纯&quot;];</div><div class="line">        [subscriber sendCompleted];</div><div class="line">        return nil;</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    RACSignal *signal2 = [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        [subscriber sendNext:@&quot;温柔&quot;];</div><div class="line">        [subscriber sendCompleted];</div><div class="line">        </div><div class="line">        return nil;</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    //combineLatest 将数组中的信号量发出的最后一个object 组合到一起</div><div class="line">    [[RACSignal combineLatest:@[signal1, signal2]] subscribeNext:^(RACTuple *x) &#123;</div><div class="line">        //先进行解包</div><div class="line">        RACTupleUnpack(NSString *signal1_Str, NSString *signal2_Str) = x;</div><div class="line">        NSLog(@&quot;RAC信号组合------我喜欢 %@的 %@的 妹子&quot;,signal1_Str,signal2_Str);</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    //会注意收到 组合方法后还可以跟一个Block  /** + (RACSignal *)combineLatest:(id&lt;NSFastEnumeration&gt;)signals reduce:(id (^)())reduceBlock */</div><div class="line">    /*</div><div class="line">     reduce这个Block可以对组合后的信号量做处理</div><div class="line">     */</div><div class="line">    //我们还可以这样使用</div><div class="line">    [[RACSignal combineLatest:@[signal1, signal2] reduce:^(NSString *signal1_Str, NSString *signal2_Str)&#123;</div><div class="line">        return [signal1_Str stringByAppendingString:signal2_Str];</div><div class="line">    &#125;] subscribeNext:^(id x) &#123;</div><div class="line">        NSLog(@&quot;RAC信号组合(Reduce处理)------我喜欢 %@ 的妹子&quot;,x);</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">2016-07-02 14:34:16.149 ReactiveCocoaMVVMDemo[1362:1245988] RAC信号合并------我喜欢： 性感妹子</div><div class="line">2016-07-02 14:34:16.150 ReactiveCocoaMVVMDemo[1362:1245988] RAC信号组合------我喜欢 清纯的 温柔的 妹子</div><div class="line">2016-07-02 14:34:16.150 ReactiveCocoaMVVMDemo[1362:1245988] RAC信号组合(Reduce处理)------我喜欢 清纯温柔 的妹子</div></pre></td></tr></table></figure></p>
+<hr>
+<p>###* 7 RAC信号组合<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">- (void)racSignalZIP &#123;</div><div class="line">    RACSignal *signal1 = [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        [subscriber sendNext:@&quot;年轻&quot;];</div><div class="line">        [subscriber sendNext:@&quot;清纯&quot;];</div><div class="line">        [subscriber sendCompleted];</div><div class="line">        return nil;</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    RACSignal *signal2 = [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        [subscriber sendNext:@&quot;温柔&quot;];</div><div class="line">        [subscriber sendCompleted];</div><div class="line">        </div><div class="line">        return nil;</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    //zip 默认会取信号量的最开始发送的对象 所以结果会是 年轻 、温柔</div><div class="line">    [[RACSignal zip:@[signal1,signal2]] subscribeNext:^(RACTuple *x) &#123;</div><div class="line">        RACTupleUnpack(NSString *signal1_Str1,NSString *signal2_Str) = x;</div><div class="line">        NSLog(@&quot;RAC信号压缩------我喜欢 %@的 %@的 妹子&quot;,signal1_Str1, signal2_Str);</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2016-07-02 14:34:16.151 ReactiveCocoaMVVMDemo[1362:1245988] RAC信号压缩------我喜欢 年轻的 温柔的 妹子</div></pre></td></tr></table></figure></p>
+<hr>
+<p>###* 8 RAC信号过滤<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">- (void)racSignalFilter &#123;</div><div class="line">    //信号过滤可以参考上面UIButton引用RAC的实例</div><div class="line">    [[[RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        [subscriber sendNext:@(19)];</div><div class="line">        [subscriber sendNext:@(12)];</div><div class="line">        [subscriber sendNext:@(20)];</div><div class="line">        [subscriber sendCompleted];</div><div class="line">        </div><div class="line">        return nil;</div><div class="line">    &#125;] filter:^BOOL(NSNumber *value) &#123;</div><div class="line">        if (value.integerValue &lt; 18) &#123;</div><div class="line">            //18禁</div><div class="line">            NSLog(@&quot;RAC信号过滤------FBI Warning~&quot;);</div><div class="line">        &#125;</div><div class="line">        return value.integerValue &gt; 18;</div><div class="line">    &#125;]</div><div class="line">      subscribeNext:^(id x) &#123;</div><div class="line">        NSLog(@&quot;RAC信号过滤------年龄：%@&quot;,x);</div><div class="line">   &#125;];</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">2016-07-02 14:34:16.151 ReactiveCocoaMVVMDemo[1362:1245988] RAC信号过滤------年龄：19</div><div class="line">2016-07-02 14:34:16.151 ReactiveCocoaMVVMDemo[1362:1245988] RAC信号过滤------FBI Warning~</div><div class="line">2016-07-02 14:34:16.152 ReactiveCocoaMVVMDemo[1362:1245988] RAC信号过滤------年龄：20</div></pre></td></tr></table></figure></p>
+<hr>
+<p>###* 9 RAC信号传递<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">- (void)racSignalPass &#123;</div><div class="line">    [[[[RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        [subscriber sendNext:@&quot;老板向我扔过来一个Star&quot;];</div><div class="line">        return nil;</div><div class="line">    &#125;] flattenMap:^RACStream *(NSString *value) &#123;</div><div class="line">        NSLog(@&quot;RAC信号传递------%@&quot;,value);</div><div class="line">        return [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">            [subscriber sendNext:@&quot;我向老板扔回一块板砖&quot;];</div><div class="line">            return nil;</div><div class="line">        &#125;];</div><div class="line">    &#125;] flattenMap:^RACStream *(NSString *value) &#123;</div><div class="line">        NSLog(@&quot;RAC信号传递------%@&quot;,value);</div><div class="line">        return [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">            [subscriber sendNext:@&quot;我跟老板正面刚~,结果可想而知&quot;];</div><div class="line">            return nil;</div><div class="line">        &#125;];</div><div class="line">    &#125;] subscribeNext:^(id x) &#123;</div><div class="line">        NSLog(@&quot;RAC信号传递------%@&quot;,x);</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">2016-07-02 14:34:16.152 ReactiveCocoaMVVMDemo[1362:1245988] RAC信号传递------老板向我扔过来一个Star</div><div class="line">2016-07-02 14:34:16.152 ReactiveCocoaMVVMDemo[1362:1245988] RAC信号传递------我向老板扔回一块板砖</div><div class="line">2016-07-02 14:34:16.152 ReactiveCocoaMVVMDemo[1362:1245988] RAC信号传递------我跟老板正面刚~,结果可想而知</div></pre></td></tr></table></figure></p>
+<hr>
+<p>###* 10 RAC信号串<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">//用那个著名的脑筋急转弯说明吧，“如何把大象放进冰箱里”  第一步，打开冰箱；第二步，把大象放进冰箱；第三步，关上冰箱门。</div><div class="line">- (void)racSignalQueue &#123;</div><div class="line">    //与信号传递类似，不过使用 `then` 表明的是秩序，没有传递value</div><div class="line">    [[[[RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        NSLog(@&quot;RAC信号串------打开冰箱&quot;);</div><div class="line">        [subscriber sendCompleted];</div><div class="line">        return nil;</div><div class="line">    &#125;] then:^RACSignal *&#123;</div><div class="line">        return [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">            NSLog(@&quot;RAC信号串------把大象放进冰箱&quot;);</div><div class="line">            [subscriber sendCompleted];</div><div class="line">            return nil;</div><div class="line">        &#125;];</div><div class="line">    &#125;] then:^RACSignal *&#123;</div><div class="line">        return [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">            NSLog(@&quot;RAC信号串------关上冰箱门&quot;);</div><div class="line">            [subscriber sendCompleted];</div><div class="line">            return nil;</div><div class="line">        &#125;];</div><div class="line">    &#125;] subscribeNext:^(id x) &#123;</div><div class="line">        NSLog(@&quot;RAC信号串------Over&quot;);</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">2016-07-02 17:19:53.812 ReactiveCocoaMVVMDemo[1567:2887515] RAC信号串------打开冰箱</div><div class="line">2016-07-02 17:19:53.812 ReactiveCocoaMVVMDemo[1567:2887515] RAC信号串------把大象放进冰箱</div><div class="line">2016-07-02 17:19:53.812 ReactiveCocoaMVVMDemo[1567:2887515] RAC信号串------关上冰箱门</div></pre></td></tr></table></figure></p>
+<hr>
+<p>###* 11 RAC_Command介绍<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">- (void)racCommandDemo &#123;</div><div class="line">    RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) &#123;</div><div class="line">        return [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">            NSLog(@&quot;racCommandDemo------亲，帮我带份饭~&quot;);</div><div class="line">            [subscriber sendCompleted];</div><div class="line">            return nil;</div><div class="line">        &#125;];</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    //命令执行</div><div class="line">    [command execute:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2016-07-02 17:19:53.839 ReactiveCocoaMVVMDemo[1567:2887515] racCommandDemo------亲，帮我带份饭~</div></pre></td></tr></table></figure></p>
+<hr>
+<p>###* 12 RACSignal 的一些修饰符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div></pre></td><td class="code"><pre><div class="line">- (void)racSignalOther &#123;</div><div class="line">    </div><div class="line">    //延迟</div><div class="line">    [[[RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        [subscriber sendNext:@&quot;RAC信号延迟-----等等我~等等我2秒&quot;];</div><div class="line">        [subscriber sendCompleted];</div><div class="line">        return nil;</div><div class="line">    &#125;] delay:2.0] subscribeNext:^(id x) &#123;</div><div class="line">        NSLog(@&quot;RAC信号延迟-----终于等到你~&quot;);</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    //定时任务，可以代替NSTimer,可以看到`RACScheduler`使用GCD实现的</div><div class="line">    [[RACSignal interval:60*60 onScheduler:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) &#123;</div><div class="line">        NSLog(@&quot;每小时吃一次药，不要放弃治疗&quot;);</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    //设置超时时间</div><div class="line">    [[[RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        [[[RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">            [subscriber sendNext:@&quot;hh&quot;];</div><div class="line">            [subscriber sendCompleted];</div><div class="line">            return nil;</div><div class="line">        &#125;] delay:4] subscribeNext:^(id x) &#123;</div><div class="line">            NSLog(@&quot;RAC设置超时时间------请求到数据:%@&quot;,x);</div><div class="line">            [subscriber sendNext:[@&quot;RAC设置超时时间------请求到数据:&quot; stringByAppendingString:x]];</div><div class="line">            [subscriber sendCompleted];</div><div class="line">        &#125;];</div><div class="line">        </div><div class="line">        return nil;</div><div class="line">    &#125;] timeout:3 onScheduler:[RACScheduler mainThreadScheduler]]</div><div class="line">        subscribeNext:^(id x) &#123;</div><div class="line">            //在timeout规定时间之内接受到信号，才会执行订阅者的block</div><div class="line">            //这这里3秒之内没有接受到信号，所有该次订阅已失效</div><div class="line">            NSLog(@&quot;请求到的数据:%@&quot;,x);</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    //设置retry次数，这部分可以和网络请求一起用</div><div class="line">    __block int retry_idx = 0;</div><div class="line">    [[[RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        if (retry_idx &lt; 3) &#123;</div><div class="line">            retry_idx++;</div><div class="line">            [subscriber sendError:nil];</div><div class="line">        &#125;else &#123;</div><div class="line">            [subscriber sendNext:@&quot;success!&quot;];</div><div class="line">            [subscriber sendCompleted];</div><div class="line">        &#125;</div><div class="line">        return nil;</div><div class="line">    &#125;] retry:3] subscribeNext:^(id x) &#123;</div><div class="line">        NSLog(@&quot;请求:%@&quot;,x);</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    //节流阀,throttle秒内只能通过1个消息</div><div class="line">    [[[RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        [subscriber sendNext:@&quot;6&quot;];</div><div class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</div><div class="line">            [subscriber sendNext:@&quot;66&quot;];</div><div class="line">        &#125;);</div><div class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</div><div class="line">            [subscriber sendNext:@&quot;666&quot;];</div><div class="line">            [subscriber sendCompleted];</div><div class="line">        &#125;);</div><div class="line">        </div><div class="line">        return nil;</div><div class="line">    &#125;] throttle:2] subscribeNext:^(id x) &#123;</div><div class="line">        //throttle: N   N秒之内只能通过一个消息，所以@&quot;66&quot;是不会被发出的</div><div class="line">        NSLog(@&quot;RAC_throttle------result = %@&quot;,x);</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    //条件控制</div><div class="line">    /**</div><div class="line">     解释：`takeUntil:(RACSignal *)signalTrigger` 只有当`signalTrigger`这个signal发出消息才会停止</div><div class="line">     */</div><div class="line">    [[[RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        [[RACSignal interval:1.0 onScheduler:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) &#123;</div><div class="line">            //每秒发一个消息</div><div class="line">            [subscriber sendNext:@&quot;RAC_Condition------吃饭中~&quot;];</div><div class="line">        &#125;];</div><div class="line">        return nil;</div><div class="line">    &#125;] takeUntil:[RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        //延迟3S发送一个消息，才会让前面的信号停止</div><div class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</div><div class="line">            NSLog(@&quot;RAC_Condition------吃饱了~&quot;);</div><div class="line">            [subscriber sendNext:@&quot;吃饱了&quot;];</div><div class="line">        &#125;);</div><div class="line">        return nil;</div><div class="line">    &#125;]] subscribeNext:^(id x) &#123;</div><div class="line">        NSLog(@&quot;%@&quot;,x);</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//延迟</div><div class="line">2016-07-02 17:36:09.398 ReactiveCocoaMVVMDemo[2040:2898007] RAC信号延迟-----终于等到你~</div><div class="line">//定时任务</div><div class="line">2016-07-02 16:36:12.400 ReactiveCocoaMVVMDemo[2040:2898007] 每小时吃一次药，不要放弃治疗</div><div class="line">2016-07-02 17:36:12.400 ReactiveCocoaMVVMDemo[2040:2898007] 每小时吃一次药，不要放弃治疗</div><div class="line">//设置retry次数，这部分可以和网络请求一起用</div><div class="line">2016-07-02 17:36:07.427 ReactiveCocoaMVVMDemo[2040:2898007] 请求:success!</div><div class="line">//节流阀,throttle秒内只能通过1个消息</div><div class="line">2016-07-02 17:36:10.404 ReactiveCocoaMVVMDemo[2040:2898007] RAC_throttle------result = 66</div><div class="line">2016-07-02 17:36:10.404 ReactiveCocoaMVVMDemo[2040:2898007] RAC_throttle------result = 666</div><div class="line">//takeUntil条件控制</div><div class="line">2016-07-02 18:10:52.074 ReactiveCocoaMVVMDemo[3090:2920422] RAC_Condition------吃饭中~</div><div class="line">2016-07-02 18:10:53.078 ReactiveCocoaMVVMDemo[3090:2920422] RAC_Condition------吃饭中~</div><div class="line">2016-07-02 18:10:54.074 ReactiveCocoaMVVMDemo[3090:2920422] RAC_Condition------吃饭中~</div><div class="line">2016-07-02 18:10:55.077 ReactiveCocoaMVVMDemo[3090:2920422] RAC_Condition------吃饭中~</div><div class="line">2016-07-02 18:10:55.078 ReactiveCocoaMVVMDemo[3090:2920422] RAC_Condition------吃饱了~</div></pre></td></tr></table></figure></p>
+<hr>
+<p>##文末</p>
+<p>本篇文章并未很深的探讨<code>ReactiveCocoa</code>的底层实现方法，权当做抛砖引玉，给大家介绍一下<code>RAC</code>的浅析和使用</p>
+<hr>
+<p><strong>Github链接和文中所引用的文章链接</strong></p>
+<hr>
+<p><strong>如果觉得文章对你有所帮助的话，请点个Star啦~</strong></p>
+<ul>
+<li>1 <a href="https://github.com/jiachenmu/ReactiveCocoaDemo" target="_blank" rel="external">文章中的链式编程和RACDemo</a></li>
+<li>2 <a href="https://github.com/benjycui/introrx-chinese-edition?utm_source=tuicool&amp;utm_medium=referral#%E4%BB%80%E4%B9%88%E6%98%AFrp" target="_blank" rel="external">什么是响应式编程?</a></li>
+<li>3 <a href="http://ios.jobbole.com/82356/" target="_blank" rel="external">这样好用的ReactiveCocoa，根本停不下来</a></li>
+<li>4 <a href="http://mobile.51cto.com/news-494321.htm" target="_blank" rel="external">最快让你上手ReactiveCocoa之进阶篇</a></li>
+<li>5 <a href="http://www.cocoachina.com/ios/20160106/14880.html" target="_blank" rel="external">ReactiveCocoa v2.5 源码解析之架构总览</a></li>
+</ul>
+
+          </section>
+        </article>
+        
+
+       
+        <div class="pager">
+          
+          
+            <a class="post-next pager-item" href="/2016/06/30/iOS小项目之第二弹-别踩白块/">
+              <strong class="article-nav-caption">Older</strong>
+              <p class="post-nav-title">iOS小项目之第二弹- 别踩白块</p>
+            </a>
+          
+        </div>
+        
+
+         <!-- comments -->
+        <div class="comment-section">
+  
+    
+
+    <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="_posts/iOS-Reactive-Cocoa使用浅析.md" data-title="iOS Reactive Cocoa使用浅析" data-url="http://yoursite.com/2016/07/04/iOS-Reactive-Cocoa使用浅析/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+      <script type="text/javascript">
+      var duoshuoQuery = {short_name:"wayouliu"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+
+  
+
+
+</div>
+
+    </div>
+    
+</div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+    <p>由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动，搭载<a href="https://github.com/wayou/hexo-theme-gstyle">gstyle</a>主题</p>
+    <p>
+        &copy; 2016 ManoBoo
+    </p>
+</footer>
+<script src="/lib/jquery.js"></script>
+<script src="/lib/waves.js"></script>
+<script src="/lib/jquery-ui.js"></script>
+<script src="/lib/jquery.tocify.js"></script>
+<script src="/js/main.js"></script>
+
+    </body>
+</html>
