@@ -1,113 +1,77 @@
-<!DOCTYPE html>
-          <head>
-        <meta charset="utf-8">
-            
-            <title>
-                iOS利用Runtime写一个Json转Model的工具 | ManoBoo的技术小窝
-            </title>
-            <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
-            <meta name="theme-color" content="#4184f3">
-            
-            
-            <link href="/favicon.ico" rel="icon"/>
-            
-
-            <link rel="stylesheet" href="/css/highlight.light.css">
-            <link rel="stylesheet" href="/css/nav-icon.css">
-            <link rel="stylesheet" href="/css/waves.min.css">
-            <link rel="stylesheet" href="/css/jquery.tocify.css">
-            <link rel="stylesheet" href="/css/main.css">
-            <link rel="stylesheet" href="/css/nav-indicator.css">
-            
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  
+  <title>iOS利用Runtime写一个Json转Model的工具</title>
+  <meta name="author" content="ManoBoo">
+   <meta name="description" content="ManoBoo的技术博客，以后文章会和简书同步更新~">
   
 
+  <meta property="og:title" content="iOS利用Runtime写一个Json转Model的工具"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="ManoBoo的技术小窝"/>
+ <meta property="og:image" content="undefined"/>
   
-            </meta>
-        </meta>
-    </head>
-    <body>
-        <header>
-            <!-- cover image or sth. -->
-        </header>
-        <div id="main" class="m-scene">
-            <div class="nav-wrapper" style="background-color:undefined">
-    <div class="container">
-        <nav>
-            <div class="logo wave">
-                <a href="/" id="logo">
-                    ManoBoo的技术小窝
-                </a>
-            </div>
-            <div class="nav-toggle-icon" >
-                <div class="material-hamburger">
-                    <span>
-                    </span>
-                    <span>
-                    </span>
-                    <span>
-                    </span>
-                </div>
-            </div>
-            <div class="menu-wrapper">
-                <div class="nav-indicator">
-                </div>
-                <ul class="menus">
-                    
-                     
-                        <li>
-                            <a class="wave " href="/">
-                                Home
-                            </a>
-                        </li>
-                     
-                        <li>
-                            <a class="wave " href="/archives">
-                                Archive
-                            </a>
-                        </li>
-                     
-                        <li>
-                            <a class="wave " href="/about">
-                                About
-                            </a>
-                        </li>
-                     
-                        <li>
-                            <a class="wave no-smoothstate" href="/atom.xml">
-                                RSS
-                            </a>
-                        </li>
-                     
-                    
-                   
-                </ul>
-            </div>
-        </nav>
+  <link rel="alternate" href="/atom.xml" title="ManoBoo的技术小窝" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+  <div id="main">
+    <div class="behind">
+      <div class="back">
+        <a href="/" class="black-color"><i class="fa fa-times" aria-hidden="true"></i></a>
+      </div>
+      <div class="description">
+        &nbsp;欢迎来ManoBoo的小窝做客
+      </div>
     </div>
-</div>
-            <div class="container content">
-                <div class="scene_element scene_element--fadein">
-                    <div class="row">
-    <div class="main">
-        <article>
-          
-          <header class="post-header">
-          
-          </header>
-          <h1 class="post-title">iOS利用Runtime写一个Json转Model的工具</h1>
+    <div class="container">
+      
 
-          <section class="post-info">
-            <span class="post-date">2016/7/19</span>
-            
-            
-            <span class="post-tags">
-              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/CMModel-JSON转Model工具/">CMModel JSON转Model工具</a></li></ul>
-            </span>
-            
-          </section>
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        iOS利用Runtime写一个Json转Model的工具
+    </h1>
+  
 
-          <section class="post-content">
-            <hr>
+
+    </div>
+    <div class="meta center">
+      
+<time datetime="2016-07-19T09:43:05.000Z">
+  <i class="fa fa-calendar"></i>&nbsp;
+  2016-07-19
+</time>
+
+
+
+
+
+
+    
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/tags/CMModel-JSON转Model工具/">CMModel JSON转Model工具</a>
+
+
+    </div>
+    <hr>
+    <div class="picture-container">
+      
+    </div>
+    <hr>
 <h2 id="前言"><a href="#前言" class="headerlink" title="#前言"></a>#前言</h2><h2 id="好久没有写过新文章了，最近一直在忙工作的事情，我的新浪微博开源项目也停止了一周时间，目前完成了60-，就先写一篇关于JSON转Model的文章和大家聊聊天吧，为什么会写一个这个小工具呢，请看文末😄"><a href="#好久没有写过新文章了，最近一直在忙工作的事情，我的新浪微博开源项目也停止了一周时间，目前完成了60-，就先写一篇关于JSON转Model的文章和大家聊聊天吧，为什么会写一个这个小工具呢，请看文末😄" class="headerlink" title="###好久没有写过新文章了，最近一直在忙工作的事情，我的新浪微博开源项目也停止了一周时间，目前完成了60%，就先写一篇关于JSON转Model的文章和大家聊聊天吧，为什么会写一个这个小工具呢，请看文末😄"></a>###好久没有写过新文章了，最近一直在忙工作的事情，我的新浪微博开源项目也停止了一周时间，目前完成了60%，就先写一篇关于JSON转Model的文章和大家聊聊天吧，为什么会写一个这个小工具呢，请看文末😄</h2><h2 id="核心方法Runtime的介绍"><a href="#核心方法Runtime的介绍" class="headerlink" title="#核心方法Runtime的介绍"></a>#核心方法Runtime的介绍</h2><p>##1. Runtime是什么？</p>
 <p>顾名思义：Runtime就是运行时的意思，是系统在运行时的一些机制，其中最主要的就是消息机制，举个常用的例子，在面向对象编程的语言中，万物皆对象，对象如何调用方法呢，<br><code>[target excuteSEL]</code>,需要一个对象，需要一个方法名，系统在运行时会自动转换成以下的形式：<br><code>objc_msgSend(target,@selector(excuteSEL:))</code></p>
 <p>关于Runtime的详细介绍，网上有很多，这里就不做过多描述了。</p>
@@ -170,67 +134,81 @@
 <p><a href="https://github.com/jiachenmu/JSONTOModel" target="_blank" rel="external">文中的Demo下载地址</a></p>
 </blockquote>
 
-          </section>
-        </article>
-        
 
-       
-        <div class="pager">
-          
-          
-            <a class="post-next pager-item" href="/2016/07/04/iOS-Reactive-Cocoa使用浅析/">
-              <strong class="article-nav-caption">Older</strong>
-              <p class="post-nav-title">iOS Reactive Cocoa使用浅析</p>
-            </a>
-          
-        </div>
-        
-
-         <!-- comments -->
-        <div class="comment-section">
-  
-    
-
-    <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="_posts/iOS利用Runtime写一个Json转Model的工具.md" data-title="iOS利用Runtime写一个Json转Model的工具" data-url="http://yoursite.com/2016/07/19/iOS利用Runtime写一个Json转Model的工具/"></div>
-    <!-- 多说评论框 end -->
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-      <script type="text/javascript">
-      var duoshuoQuery = {short_name:"wayouliu"};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-      </script>
-    <!-- 多说公共JS代码 end -->
-
-  
+  </article>
+  </script>
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <div class="busuanzi center">
+    页阅读量:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    站访问量:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    站访客数:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
 
 
-</div>
+
 
     </div>
-    
+  </div>
+  <footer class="page-footer"><div class="clearfix">
 </div>
-
-                </div>
-            </div>
-        </div>
-        <footer class="footer">
-    <p>由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动，搭载<a href="https://github.com/wayou/hexo-theme-gstyle">gstyle</a>主题</p>
-    <p>
-        &copy; 2016 ManoBoo
-    </p>
+<div class="right-foot container">
+    <div class="firstrow">
+        <a href="#top" >
+        <i class="fa fa-arrow-right"></i>
+        </a>
+        © XXX 2015-2016
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
 </footer>
-<script src="/lib/jquery.js"></script>
-<script src="/lib/waves.js"></script>
-<script src="/lib/jquery-ui.js"></script>
-<script src="/lib/jquery.tocify.js"></script>
-<script src="/js/main.js"></script>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.js"></script>
+<script type="text/javascript">
 
-    </body>
+// comments below to disable loading animation
+function revealOnScroll() {
+  var scrolled = $(window).scrollTop();
+  $(".excerpt, .index-title, .index-meta, p").each(function() {
+    var current = $(this),
+      height = $(window).outerHeight(),
+      offsetTop = current.offset().top;
+    (scrolled + height + 50 > offsetTop) ? current.addClass("animation"):'';
+  });
+}
+$(window).on("scroll", revealOnScroll);
+$(document).ready(revealOnScroll)
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+// back to top scripts
+$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, 500);
+  return false;
+});
+
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
 </html>

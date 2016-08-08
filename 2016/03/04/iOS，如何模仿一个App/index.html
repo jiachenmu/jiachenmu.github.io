@@ -1,113 +1,77 @@
-<!DOCTYPE html>
-          <head>
-        <meta charset="utf-8">
-            
-            <title>
-                iOS，如何模仿一个App | ManoBoo的技术小窝
-            </title>
-            <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
-            <meta name="theme-color" content="#4184f3">
-            
-            
-            <link href="/favicon.ico" rel="icon"/>
-            
-
-            <link rel="stylesheet" href="/css/highlight.light.css">
-            <link rel="stylesheet" href="/css/nav-icon.css">
-            <link rel="stylesheet" href="/css/waves.min.css">
-            <link rel="stylesheet" href="/css/jquery.tocify.css">
-            <link rel="stylesheet" href="/css/main.css">
-            <link rel="stylesheet" href="/css/nav-indicator.css">
-            
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  
+  <title>iOS，如何模仿一个App</title>
+  <meta name="author" content="ManoBoo">
+   <meta name="description" content="ManoBoo的技术博客，以后文章会和简书同步更新~">
   
 
+  <meta property="og:title" content="iOS，如何模仿一个App"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="ManoBoo的技术小窝"/>
+ <meta property="og:image" content="undefined"/>
   
-            </meta>
-        </meta>
-    </head>
-    <body>
-        <header>
-            <!-- cover image or sth. -->
-        </header>
-        <div id="main" class="m-scene">
-            <div class="nav-wrapper" style="background-color:undefined">
-    <div class="container">
-        <nav>
-            <div class="logo wave">
-                <a href="/" id="logo">
-                    ManoBoo的技术小窝
-                </a>
-            </div>
-            <div class="nav-toggle-icon" >
-                <div class="material-hamburger">
-                    <span>
-                    </span>
-                    <span>
-                    </span>
-                    <span>
-                    </span>
-                </div>
-            </div>
-            <div class="menu-wrapper">
-                <div class="nav-indicator">
-                </div>
-                <ul class="menus">
-                    
-                     
-                        <li>
-                            <a class="wave " href="/">
-                                Home
-                            </a>
-                        </li>
-                     
-                        <li>
-                            <a class="wave " href="/archives">
-                                Archive
-                            </a>
-                        </li>
-                     
-                        <li>
-                            <a class="wave " href="/about">
-                                About
-                            </a>
-                        </li>
-                     
-                        <li>
-                            <a class="wave no-smoothstate" href="/atom.xml">
-                                RSS
-                            </a>
-                        </li>
-                     
-                    
-                   
-                </ul>
-            </div>
-        </nav>
+  <link rel="alternate" href="/atom.xml" title="ManoBoo的技术小窝" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+  <div id="main">
+    <div class="behind">
+      <div class="back">
+        <a href="/" class="black-color"><i class="fa fa-times" aria-hidden="true"></i></a>
+      </div>
+      <div class="description">
+        &nbsp;欢迎来ManoBoo的小窝做客
+      </div>
     </div>
-</div>
-            <div class="container content">
-                <div class="scene_element scene_element--fadein">
-                    <div class="row">
-    <div class="main">
-        <article>
-          
-          <header class="post-header">
-          
-          </header>
-          <h1 class="post-title">iOS，如何模仿一个App</h1>
+    <div class="container">
+      
 
-          <section class="post-info">
-            <span class="post-date">2016/3/4</span>
-            
-            
-            <span class="post-tags">
-              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/iOS-模仿-App/">iOS 模仿 App</a></li></ul>
-            </span>
-            
-          </section>
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        iOS，如何模仿一个App
+    </h1>
+  
 
-          <section class="post-content">
-            <p>##前言<br>作为一个IOS程序员，闲的时候也想自己做一个app练练手，又苦于没有UI设计，也没有好的idea，所以只能先模仿别人的App了，但是也会遇到以下问题<br><strong><br>①不知道怎么入手？怎么设计
+
+    </div>
+    <div class="meta center">
+      
+<time datetime="2016-03-04T02:42:00.000Z">
+  <i class="fa fa-calendar"></i>&nbsp;
+  2016-03-04
+</time>
+
+
+
+
+
+
+    
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/tags/iOS-模仿-App/">iOS 模仿 App</a>
+
+
+    </div>
+    <hr>
+    <div class="picture-container">
+      
+    </div>
+    <p>##前言<br>作为一个IOS程序员，闲的时候也想自己做一个app练练手，又苦于没有UI设计，也没有好的idea，所以只能先模仿别人的App了，但是也会遇到以下问题<br><strong><br>①不知道怎么入手？怎么设计
 </strong><br><strong><br>②app中的素材、图标要自己找吗、没有UI妹子给你切图怎么办，
 </strong><br><strong><br>③没有数据怎么办？假数据也不会做怎么办
 </strong><br><strong><br>④编写程序中该注意些什么
@@ -172,67 +136,81 @@
 <p>#####<strong>⑤ 其实看到一个页面要先把整个页面的结构确定好，不要写了一半才发现这样写好像太麻烦，或者这样写写不出来</strong><br>我在我的高仿半糖app中 首页就遇到了这样的问题，开始想着 用<code>UIScrollView</code>当做容器，里面添加<code>UITableView</code>显示内容，这样做未尝不可，但是考虑到复用的问题，可以用三个tableView完成复用，但是这样做过于麻烦，所以后来就用collectionView当做容器，将tableView 添加到collectionViewCell中显示出来，这样复用的问题就解决了</p>
 <p>###写在后面的话<br>我的开发经验也不多，上面完全是我在做项目中自己的感悟和体会，有些可能会有问题，请参考即可</p>
 
-          </section>
-        </article>
-        
 
-       
-        <div class="pager">
-          
-            <a class="post-prev pager-item" href="/2016/06/30/Swift2-0-高仿半塘App/" >
-              <strong class="article-nav-caption">Newer</strong>
-              <p class="post-nav-title">Swift2.0 高仿半塘App</p>
-            </a>
-          
-          
-        </div>
-        
-
-         <!-- comments -->
-        <div class="comment-section">
-  
-    
-
-    <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="_posts/iOS，如何模仿一个App.md" data-title="iOS，如何模仿一个App" data-url="http://yoursite.com/2016/03/04/iOS，如何模仿一个App/"></div>
-    <!-- 多说评论框 end -->
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-      <script type="text/javascript">
-      var duoshuoQuery = {short_name:"wayouliu"};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-      </script>
-    <!-- 多说公共JS代码 end -->
-
-  
+  </article>
+  </script>
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <div class="busuanzi center">
+    页阅读量:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    站访问量:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    站访客数:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
 
 
-</div>
+
 
     </div>
-    
+  </div>
+  <footer class="page-footer"><div class="clearfix">
 </div>
-
-                </div>
-            </div>
-        </div>
-        <footer class="footer">
-    <p>由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动，搭载<a href="https://github.com/wayou/hexo-theme-gstyle">gstyle</a>主题</p>
-    <p>
-        &copy; 2016 ManoBoo
-    </p>
+<div class="right-foot container">
+    <div class="firstrow">
+        <a href="#top" >
+        <i class="fa fa-arrow-right"></i>
+        </a>
+        © XXX 2015-2016
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
 </footer>
-<script src="/lib/jquery.js"></script>
-<script src="/lib/waves.js"></script>
-<script src="/lib/jquery-ui.js"></script>
-<script src="/lib/jquery.tocify.js"></script>
-<script src="/js/main.js"></script>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.js"></script>
+<script type="text/javascript">
 
-    </body>
+// comments below to disable loading animation
+function revealOnScroll() {
+  var scrolled = $(window).scrollTop();
+  $(".excerpt, .index-title, .index-meta, p").each(function() {
+    var current = $(this),
+      height = $(window).outerHeight(),
+      offsetTop = current.offset().top;
+    (scrolled + height + 50 > offsetTop) ? current.addClass("animation"):'';
+  });
+}
+$(window).on("scroll", revealOnScroll);
+$(document).ready(revealOnScroll)
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+// back to top scripts
+$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, 500);
+  return false;
+});
+
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
 </html>
