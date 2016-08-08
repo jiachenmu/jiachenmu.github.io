@@ -1,266 +1,113 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Swift2.0 高仿半塘App | ManoBoo的技术小窝</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#IOS-Swift2.0 高仿半糖App
-
-##写在前面的话–少年我是去年毕业做IOS开发的，这个项目大概是2016年1月份到现在做完的，项目刚开始没学过Swift语言，但想着不会就该去挑战，于是边学习边做这个项目，现在对Swift也有了一定的了解，在此感谢维尼的小熊的指导
-##关于项目(GitHub地址在文章最下方)–这个开源项目为半糖，官网➡,类似于美丽说，一款电商App，使用语言:Swif">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Swift2.0 高仿半塘App">
-<meta property="og:url" content="http://yoursite.com/2016/06/30/Swift2-0-高仿半塘App/index.html">
-<meta property="og:site_name" content="ManoBoo的技术小窝">
-<meta property="og:description" content="#IOS-Swift2.0 高仿半糖App
-
-##写在前面的话–少年我是去年毕业做IOS开发的，这个项目大概是2016年1月份到现在做完的，项目刚开始没学过Swift语言，但想着不会就该去挑战，于是边学习边做这个项目，现在对Swift也有了一定的了解，在此感谢维尼的小熊的指导
-##关于项目(GitHub地址在文章最下方)–这个开源项目为半糖，官网➡,类似于美丽说，一款电商App，使用语言:Swif">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-f59c8f1a63af8958.gif?imageMogr2/auto-orient/strip">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-bafce461cd2e285b.gif?imageMogr2/auto-orient/strip">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-0d90d236d859233e.gif?imageMogr2/auto-orient/strip">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-3c0e3ba29e9f00d8.gif?imageMogr2/auto-orient/strip">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-033b26149abfad1d.gif?imageMogr2/auto-orient/strip">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-626bdc9943daf60d.gif?imageMogr2/auto-orient/strip">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-6dca6a94de88f6ff.gif?imageMogr2/auto-orient/strip">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-1295962d038abd25.gif?imageMogr2/auto-orient/strip">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-5510cff43f75da01.gif?imageMogr2/auto-orient/strip">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-84bab42ca5fbfa65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-4f95d6d29d3a0ec3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-a13038df731a2086.gif?imageMogr2/auto-orient/strip">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-32d54cd4642191bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-99ce105df96fba14.gif?imageMogr2/auto-orient/strip">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-c373856c19d81113.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-5d605f459c2474c4.gif?imageMogr2/auto-orient/strip">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-baff52f142491aee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-d0b3d3c1fcd7ed7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-767663cc96358060.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1299512-ff192623db0d0fd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2016-06-30T01:28:39.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Swift2.0 高仿半塘App">
-<meta name="twitter:description" content="#IOS-Swift2.0 高仿半糖App
-
-##写在前面的话–少年我是去年毕业做IOS开发的，这个项目大概是2016年1月份到现在做完的，项目刚开始没学过Swift语言，但想着不会就该去挑战，于是边学习边做这个项目，现在对Swift也有了一定的了解，在此感谢维尼的小熊的指导
-##关于项目(GitHub地址在文章最下方)–这个开源项目为半糖，官网➡,类似于美丽说，一款电商App，使用语言:Swif">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1299512-f59c8f1a63af8958.gif?imageMogr2/auto-orient/strip">
-  
-    <link rel="alternative" href="/atom.xml" title="ManoBoo的技术小窝" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/img/avatar.png">
-  
-  
-  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-  
-      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  
-  <!-- 加载特效 -->
-    <script src="/js/pace.js"></script>
-    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
-  <script>
-      var yiliaConfig = {
-          fancybox: true,
-          animate: true,
-          isHome: false,
-          isPost: true,
-          isArchive: false,
-          isTag: false,
-          isCategory: false,
-          open_in_new: false
-      }
-  </script>
-</head>
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/" class="profilepic">
+          <head>
+        <meta charset="utf-8">
             
-            <img lazy-src="/img/avatar.png" class="js-avatar">
+            <title>
+                Swift2.0 高仿半塘App | ManoBoo的技术小窝
+            </title>
+            <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+            <meta name="theme-color" content="#4184f3">
             
-        </a>
+            
+            <link href="/favicon.ico" rel="icon"/>
+            
 
-        <hgroup>
-          <h1 class="header-author"><a href="/">ManoBoo</a></h1>
-        </hgroup>
+            <link rel="stylesheet" href="/css/highlight.light.css">
+            <link rel="stylesheet" href="/css/nav-icon.css">
+            <link rel="stylesheet" href="/css/waves.min.css">
+            <link rel="stylesheet" href="/css/jquery.tocify.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/nav-indicator.css">
+            
+  
 
-        
-        <p class="header-subtitle">欢迎来ManoBoo的小窝做客</p>
-        
-        
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
+  
+            </meta>
+        </meta>
+    </head>
+    <body>
+        <header>
+            <!-- cover image or sth. -->
+        </header>
+        <div id="main" class="m-scene">
+            <div class="nav-wrapper" style="background-color:undefined">
+    <div class="container">
+        <nav>
+            <div class="logo wave">
+                <a href="/" id="logo">
+                    ManoBoo的技术小窝
+                </a>
+            </div>
+            <div class="nav-toggle-icon" >
+                <div class="material-hamburger">
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                </div>
+            </div>
+            <div class="menu-wrapper">
+                <div class="nav-indicator">
+                </div>
+                <ul class="menus">
                     
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/">博客首页</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fl github" target="_blank" href="https://github.com/jiachenmu" title="github">github</a>
-                            
-                                <a class="fl Weibo" target="_blank" href="http://weibo.com/u/3484140182?is_all=1" title="Weibo">Weibo</a>
-                            
-                                <a class="fl NeteaseMusic" target="_blank" href="http://music.163.com/#/user/home?id=79418549" title="NeteaseMusic">NeteaseMusic</a>
-                            
-                                <a class="fl Jianshu" target="_blank" href="http://www.jianshu.com/users/232094594d02/latest_articles" title="Jianshu">Jianshu</a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/CMModel-JSON转Model工具/" style="font-size: 10px;">CMModel JSON转Model工具</a> <a href="/tags/ReactiveCocoa/" style="font-size: 10px;">ReactiveCocoa</a> <a href="/tags/Swift2-0-高仿App-半塘/" style="font-size: 10px;">Swift2.0 高仿App 半塘</a> <a href="/tags/iOS-模仿-App/" style="font-size: 10px;">iOS 模仿 App</a> <a href="/tags/iOS小项目-App/" style="font-size: 20px;">iOS小项目 App</a>
-                    </div>
-                </section>
-                
-                
-                
-
-                
-                
-                <section class="switch-part switch-part3">
-                
-                    <div id="js-aboutme">iOS开发者，写代码是一件非常happy的事情😄</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>                
-</div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">ManoBoo</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                
-                    <img lazy-src="/img/avatar.png" class="js-avatar">
-                
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">ManoBoo</a></h1>
-            </hgroup>
-            
-            <p class="header-subtitle">欢迎来ManoBoo的小窝做客</p>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/">博客首页</a></li>
-                
-                <div class="clearfix"></div>
+                     
+                        <li>
+                            <a class="wave " href="/">
+                                Home
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/archives">
+                                Archive
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/about">
+                                About
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave no-smoothstate" href="/atom.xml">
+                                RSS
+                            </a>
+                        </li>
+                     
+                    
+                   
                 </ul>
-            </nav>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a class="github" target="_blank" href="https://github.com/jiachenmu" title="github">github</a>
-                    
-                        <a class="Weibo" target="_blank" href="http://weibo.com/u/3484140182?is_all=1" title="Weibo">Weibo</a>
-                    
-                        <a class="NeteaseMusic" target="_blank" href="http://music.163.com/#/user/home?id=79418549" title="NeteaseMusic">NeteaseMusic</a>
-                    
-                        <a class="Jianshu" target="_blank" href="http://www.jianshu.com/users/232094594d02/latest_articles" title="Jianshu">Jianshu</a>
-                    
-                </div>
-            </nav>
-        </header>                
+            </div>
+        </nav>
     </div>
-</nav>
-      <div class="body-wrap"><article id="post-Swift2-0-高仿半塘App" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/30/Swift2-0-高仿半塘App/" class="article-date">
-      <time datetime="2016-06-30T01:27:39.000Z" itemprop="datePublished">2016-06-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Swift2.0 高仿半塘App
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift2-0-高仿App-半塘/">Swift2.0 高仿App 半塘</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+</div>
+            <div class="container content">
+                <div class="scene_element scene_element--fadein">
+                    <div class="row">
+    <div class="main">
+        <article>
           
-        <p>#IOS-Swift2.0 高仿半糖App</p>
+          <header class="post-header">
+          
+          </header>
+          <h1 class="post-title">Swift2.0 高仿半塘App</h1>
+
+          <section class="post-info">
+            <span class="post-date">2016/6/30</span>
+            
+            
+            <span class="post-tags">
+              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Swift2-0-高仿App-半塘/">Swift2.0 高仿App 半塘</a></li></ul>
+            </span>
+            
+          </section>
+
+          <section class="post-content">
+            <p>#IOS-Swift2.0 高仿半糖App</p>
 <hr>
 <p>##写在前面的话<br>–少年我是去年毕业做IOS开发的，这个项目大概是2016年1月份到现在做完的，项目刚开始没学过Swift语言，但想着不会就该去挑战，于是边学习边做这个项目，现在对Swift也有了一定的了解<br>，在此感谢<a href="http://www.jianshu.com/users/5fe7513c7a57/latest_articles" target="_blank" rel="external">维尼的小熊</a>的指导</p>
 <p>##关于项目(GitHub地址在文章最下方)<br>–这个开源项目为半糖，<a href="http://www.ibantang.com" target="_blank" rel="external">官网➡</a>,类似于美丽说，一款电商App，使用语言:Swift2.0,开发工具: Xcode 7.1,纯代码开发,耗时两个多月，数据为本地数据，用Charles进行抓包。<br>–项目测试机为5S，UI没有对6/6S进行适配<br>–因为开发时间有限，APP里面的各种分类相当繁多，因此首页中测试的话点第一个分类，第一个cell，一般都是有数据的，没有也会提示。<br>–我是个新手,Bug是难免的嘛。如果发现有Bug和疑问，请向我联系，QQ、简书、微博都可以<br>–Tips:首页支持3D Touch，可以试试哦~</p>
@@ -328,256 +175,72 @@
 <p>###项目编写中用的切图、标注、及本地数据在我的百度云</p>
 <p><a href="http://pan.baidu.com/s/1dDZYetV" target="_blank" rel="external">切图、数据下载地址-ManoBpp的百度云</a></p>
 
-      
-    </div>
-    
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/06/30/Swift2-0-高仿半塘App/">Swift2.0 高仿半塘App</a></p>
-        <p><span>文章作者:</span><a href="/" title="访问 ManoBoo 的个人博客">ManoBoo</a></p>
-        <p><span>发布时间:</span>2016年06月30日 - 09时27分</p>
-        <p><span>最后更新:</span>2016年06月30日 - 09时28分</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/06/30/Swift2-0-高仿半塘App/" title="Swift2.0 高仿半塘App">http://yoursite.com/2016/06/30/Swift2-0-高仿半塘App/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/06/30/Swift2-0-高仿半塘App/　　作者: ManoBoo" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script src="/js/clipboard.min.js"></script>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-<nav id="article-nav">
-  
-    <a href="/2016/06/30/iOS小项目之第一弹-壁纸天气/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
+          </section>
+        </article>
         
-          iOS小项目之第一弹- 壁纸天气
+
+       
+        <div class="pager">
+          
+            <a class="post-prev pager-item" href="/2016/06/30/iOS小项目之第一弹-壁纸天气/" >
+              <strong class="article-nav-caption">Nieuwer</strong>
+              <p class="post-nav-title">iOS小项目之第一弹- 壁纸天气</p>
+            </a>
+          
+          
+            <a class="post-next pager-item" href="/2016/03/04/iOS，如何模仿一个App/">
+              <strong class="article-nav-caption">Ouder</strong>
+              <p class="post-nav-title">iOS，如何模仿一个App</p>
+            </a>
+          
+        </div>
         
-      </div>
-    </a>
-  
-  
-    <a href="/2016/03/04/iOS，如何模仿一个App/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOS，如何模仿一个App</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
 
+         <!-- comments -->
+        <div class="comment-section">
   
-</article>
-
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
     
-</div>
-<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script>
-    var valueHide = "隐藏目录";
-    var valueShow = "显示目录";
-
-    if ($(".left-col").is(":hidden")) {
-        $("#tocButton").attr("value", valueShow);
-    }
-    $("#tocButton").click(function() {
-        if ($("#toc").is(":hidden")) {
-            $("#tocButton").attr("value", valueHide);
-            $("#toc").slideDown(320);
-        }
-        else {
-            $("#tocButton").attr("value", valueShow);
-            $("#toc").slideUp(350);
-        }
-    })
-    if ($(".toc").length < 1) {
-        $("#toc, #tocButton").hide();
-    }
-</script>
-
-
-
-
-
-<div class="bdsharebuttonbox">
-	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
-	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
-</div>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-
-
-
-
-    
-      <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/06/30/Swift2-0-高仿半塘App/" data-title="Swift2.0 高仿半塘App" data-url="http://yoursite.com/2016/06/30/Swift2-0-高仿半塘App/"></div>
+      <div class="ds-thread" data-thread-key="_posts/Swift2-0-高仿半塘App.md" data-title="Swift2.0 高仿半塘App" data-url="http://yoursite.com/2016/06/30/Swift2-0-高仿半塘App/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:"manoboo"};
-    (function() {
+      <script type="text/javascript">
+      var duoshuoQuery = {short_name:"wayouliu"};
+      (function() {
         var ds = document.createElement('script');
         ds.type = 'text/javascript';ds.async = true;
-        ds.src = '/js/embed.js';
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0] 
          || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-    </script>
+      })();
+      </script>
     <!-- 多说公共JS代码 end -->
+
+  
+
+
 </div>
 
-    
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2016/06/30/iOS小项目之第一弹-壁纸天气/" title="上一篇: iOS小项目之第一弹- 壁纸天气">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-        
-            <a href="/2016/03/04/iOS，如何模仿一个App/" title="下一篇: iOS，如何模仿一个App">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/07/19/iOS利用Runtime写一个Json转Model的工具/">iOS利用Runtime写一个Json转Model的工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/04/iOS-Reactive-Cocoa使用浅析/">iOS Reactive Cocoa使用浅析</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/30/iOS小项目之第二弹-别踩白块/">iOS小项目之第二弹- 别踩白块</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/30/iOS小项目之第一弹-壁纸天气/">iOS小项目之第一弹- 壁纸天气</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/30/Swift2-0-高仿半塘App/">Swift2.0 高仿半塘App</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/04/iOS，如何模仿一个App/">iOS，如何模仿一个App</a></li></ul>
-    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-    <script>
-        $(".post-list").addClass("toc-article");
-        $(".post-list-item a").attr("target","_blank");
-        $("#post-nav-button > a:nth-child(2)").click(function() {
-            $(".fa-bars, .fa-times").toggle();
-            $(".post-list").toggle(300);
-            if ($(".toc").length > 0) {
-                $("#toc, #tocButton").toggle(200, function() {
-                    if ($(".switch-area").is(":visible")) {
-                        $("#tocButton").attr("value", valueHide);
-                        }
-                    })
-            }
-            else {
-            }
-        })
-    </script>
-
-
-
-    <script>
-        
-    </script>
+    
 </div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2016 ManoBoo
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+
+                </div>
             </div>
         </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >访问量: 
-                            <span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>, </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
-    </div>
+        <footer class="footer">
+    <p>由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动，搭载<a href="https://github.com/wayou/hexo-theme-gstyle">gstyle</a>主题</p>
+    <p>
+        &copy; 2016 ManoBoo
+    </p>
 </footer>
-
-    </div>
-    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/lib/jquery.js"></script>
+<script src="/lib/waves.js"></script>
+<script src="/lib/jquery-ui.js"></script>
+<script src="/lib/jquery.tocify.js"></script>
 <script src="/js/main.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            var backgroundnum = 24;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-        })
-    </script>
-
-
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
-</div>
-<script>
-    $(document).ready(function() {
-        if ($("#comments").length < 1) {
-            $("#scroll > a:nth-child(2)").hide();
-        };
-    })
-</script>
-
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-  <script language="javascript">
-    $(function() {
-        $("a[title]").each(function() {
-            var a = $(this);
-            var title = a.attr('title');
-            if (title == undefined || title == "") return;
-            a.data('title', title).removeAttr('title').hover(
-
-            function() {
-                var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
-                    left: offset.left + a.outerWidth()/2 + 1
-                }).fadeIn(function() {
-                    var pop = $(this);
-                    setTimeout(function() {
-                        pop.remove();
-                    }, pop.text().length * 800);
-                });
-            }, function() {
-                $("#anchortitlecontainer").remove();
-            });
-        });
-    });
-</script>
-
-
-  </div>
-</body>
+    </body>
 </html>
